@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <title>Mes essais</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+            border: 1px solid black;
+        }
+
+        button {
+            position: relative;
+            top: 50px;
+            display: block;
+            margin: auto;
+            background-color: rgb(255, 38, 0);
+            color: white;
+            font-size: 1.5em;
+        }
+
+        #b2 {
+            position: relative;
+            top: 70px;
+        }
+
+        #b3 {
+            position: relative;
+            top: 90px;
+            background-color: rgb(51, 5, 53);
+            color: pink;
+        }
+
+        #b3 div {
+            font-size: 0.7em;
+        }
+
+        #b4 {
+            margin: unset;
+            left: 20%;
+        }
+
+        input {
+            display: block;
+            margin: auto;
+            position: relative;
+            top: 140px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container1">
+        <p id="p1">Paragraphe 1</p>
+        <p id="p2">Paragraphe 2</p>
+        <p id="p3">Paragraphe 3</p>
+    </div>
+    <button id="b1">Press here</button>
+    <button id="b2">Press here too</button>
+    <button id="b3">Another pretty button<br>
+        <div>(test one or double click)</div>
+    </button>
+    <button id="b4">Append</button>
+    <button id="b5">Remove</button>
+    <input placeholder="Write whatever you want" value="Texte du input" />
+
+    <script>
+        // $('p').mouseenter(function () {
+        //     $(this).hide();
+        // })
+
+        $('p').mouseover(function () {
+            let text = $(this).text();
+            console.log(text);
+            let textContainer1 = $('#container1').text();
+            console.log(textContainer1);
+            let htmlPara = $(this).html();
+            console.log(htmlPara);
+            let htmlContainer1 = $('#container1').html();
+            console.log(htmlContainer1);
+        })
+
+        // $('p').on('click', function () {
+        //     $(this).hide();
+        // })
+
+        $('p').on('click', function () {
+            $(this).hide("slow");
+        })
+
+        $('#b1').on('click', function () {
+            $('p').show(1000);
+            $(this).animate({ left: '150px' }, 3000, function () {
+                $(this).animate({ height: '50px' }, 3000, function () {
+                    $(this).animate({
+                        left: '0px',
+                        height: '34px'
+                    }, 3000);
+                })
+            }
+            )
+        })
+
+        $('#b2').on('click', function () {
+            $('p').toggle(1500)
+        })
+
+        $("#b3").on('click', function () {
+            $('p').fadeOut(2000);
+        })
+
+        $("#b3").on('dblclick', function () {
+            $('p').fadeIn(2000);
+        })
+
+        $('input').val();
+        let inputVal = $('input').val();
+        console.log(inputVal)
+
+        $('#b4').on('click', function(){
+            $('#p3').append('. Ajout de texte à la suite de celui déjà existant dans le même paragraphe.')
+            $('#p3').append('<p>Ajout de texte dans un autre paragraphe, mais toujours dans p3.<p>')
+            $('#container1').append('<p id="p4">Ajout de texte dans un autre paragraphe (avec un id p4), dans un paragraphe de même niveau que p3.<p>')    
+        })
+
+        $('#b5').on('click', function(){
+            $('#p4').remove()
+        })
+
+
+    </script>
+
+</body>
+
+</html>

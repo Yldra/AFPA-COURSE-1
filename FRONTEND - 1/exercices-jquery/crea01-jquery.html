@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <div id="toto"></div>
+    <script>
+        // // creation d'un element <p>
+        // var newP = document.createElement("p");
+        // // creation d'un noeud texte
+        // var newTxt = document.createTextNode("contenu");
+        // // ajout du noeud texte à l'élément <p>
+        // newP.appendChild(newTxt);
+
+        // // reference à l'élément #toto
+        // var maDiv = document.getElementById("toto");
+        // // ajout de lélément <p> à maDiv
+        // maDiv.appendChild(newP);
+
+        // maDiv.style = "color:red";
+
+        // // créer un élémént <a>
+        // var monA = document.createElement("a");
+        // // créer l'attribut href de cet elemenr monA
+        // monA.setAttribute("href", "http://example.com");
+        // // créer l'attribut title de cet element monA
+        // monA.setAttribute("title", "Exemple");
+
+        // // creation d'un noeud texte
+        // var monText = document.createTextNode("Le site example.com");
+        // // ajout du texte à monA
+        // monA.appendChild(monText);
+        // // ajout monA à maDiv
+        // maDiv.appendChild(monA);
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // création d'un élément <p>, avec le texte contenu, qu'on ajoute à l'élément dont l'id est toto, et dont on met le texte en rouge :
+            $('<p>').text("contenu").appendTo('#toto').css("color", "red");
+            // création d'une balise <a> avec son contenu, à laquelle on ajoute les attributs href et title avec leurs valeurs respectives,
+            // puis on ajoute le tout à la balise dont l'id est toto :
+            $('<a>Le site example.com</a>').attr('href', 'http://example.com').attr('title', 'Exemple').appendTo('#toto');
+
+        })
+
+    </script>
+</body>
+
+</html>

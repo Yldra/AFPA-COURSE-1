@@ -1,0 +1,56 @@
+/* VERSION BUREAU */
+
+@media screen and (min-width: 980px)
+{
+    section {
+        width: 80%;
+        box-shadow: 0px 0px 10px #bbb;
+    }
+
+    /*a:hover {
+        color: #EA0;
+    }*/
+    header h1{
+        width: 80%;
+    }
+
+    .bio, .contact{
+        flex: 0 0 45%;
+    }
+
+    .bio {
+        border-bottom: none;
+        border-right: 2px solid black;
+        padding-right: 20px;
+        margin-left: auto;
+    }
+
+    .contact {
+        padding-left: 20px;
+        margin-right: auto;
+    }
+
+    .bio a {
+        border: 2px solid transparent;
+    }
+
+    .bio a:hover {
+        color: #f28835;
+        background-color: #fff;
+        border: 2px solid #f28835;
+        box-shadow: 0 0 20px #666;
+    }
+
+    .exp-logo {
+        flex: 0 0 10%;
+    }
+
+    .exp-info, .exp-desc {
+        flex: 0 0 85%;
+        margin-left: auto;
+    }
+
+    .interet {
+        flex: 0 1 25%;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap_2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        .col{
+        border: 1px solid violet;
+        background-color: blueviolet;
+        }
+        .col-4{
+        border: 1px solid violet;
+        background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- avec Bootstrap, on utilise des colonnes en "row" et au nb de 12
+         Ceux-ci vont être respansive et dépendront de la taille d'écran
+         défini par bootstrap-->
+
+
+    <div class="container text-center">
+
+    <!-- avec le container, on détermine l'alignement -->
+
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+    <!-- 1er row: détermine le rangement
+        row-cols-2: défini le nb de colonnes générales
+        row-cols-lg-5: défini le nb de colonnes à partir de la taille d'écran large
+        g-2: défini la marge horizontale et verticale générale
+        g-lg-3: défini la marge Horz. Vert.à partir de la taille d'écran large -->
+    
+
+        <div class="col">
+
+    <!-- L'intégration de la class col(qqchose) va définir la taille de la colonne -->
+
+
+     <div class="p-5">Custom column padding</div>
+
+     <!-- "p-5" détermine la marge interne de la colonne -->
+
+
+    </div>
+    <div class="col">
+      <div class="p-5">Custom column padding</div>
+    </div>
+    <div class="col">
+      <div class="p-5">Custom column padding</div>
+    </div>
+    <div class="col">
+      <div class="p-5">Custom column padding</div>
+    </div>
+    <div class="col">
+      <div class="p-5">Custom column padding</div>
+    </div>
+    <div class="col">
+      <div class="p-5">Custom column padding</div>
+    </div>
+    <div class="col">
+      <div class="p-5">Custom column padding</div>
+    </div>
+    <div class="col">
+      <div class="p-5">Custom column padding</div>
+    </div>
+    <div class="col">
+      <div class="p-5">Custom column padding</div>
+    </div>
+    <div class="col">
+      <div class="p-5">Custom column padding</div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-0 text-center">
+    <div class="col-sm-6 col-md-8">.col-sm-6 .col-md-8</div>
+
+    <!-- "col-sm-6": affiche dans 6 colonnes et à partir de la taille d'écran SM 
+         "col-md-8": affiche dans 8 colonnes et à partir de la taille d'écran MD
+    -->
+    
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+
+    <!-- "col-sm-6": affiche dans 6 colonnes et à partir de la taille d'écran SM 
+         "col-md-4": affiche dans 4 colonnes et à partir de la taille d'écran MD
+         sachant que sur une ligne il doit y avoir 12 colonnes, la 2eme ligne
+         va être comblé par les colonnes définies. 
+    -->
+
+  </div>
+</body>
+</html>

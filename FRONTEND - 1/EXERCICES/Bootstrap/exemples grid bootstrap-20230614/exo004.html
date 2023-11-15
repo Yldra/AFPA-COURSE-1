@@ -1,0 +1,29 @@
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<style>
+div { background-color: yellow ;}
+div:nth-child(2) { background-color: orange ;}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+
+ <div class="row">
+<!-- 
+     Si la résolution horizontale de l'écran est inférieure à 576px chaque div prendra toute la largeur
+     si elle est supérieure à 576px elle s'affichera sur une seule rangée et partagera l'écran entre les 2 div 
+-->
+    <div class="col-12 col-sm-1 ">a</div>
+    <div class="col-12 col-sm-10 ">b</div>
+    <div class="col-12 col-sm-1 ">c</div>
+ </div><!-- /row -->
+
+ <div class="row">
+    <div class="col-12 col-sm-2 ">d</div>
+    <div class="col-12 col-sm-8 ">e</div>
+    <div class="col-12 col-sm-2 ">f</div>
+ </div><!-- /row -->
+</div><!-- /container -->
+</body>
+</html>

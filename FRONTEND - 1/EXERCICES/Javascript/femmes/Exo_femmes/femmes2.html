@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="femmes2.js"></script>
+</head>
+<body>
+    <div id="collection">
+
+    </div>
+ 
+<script>
+
+let femmes = `[
+{ "nom_produit": "robe classe"     ,  "prix": 25 , "photo": "robef.png"    },
+{ "nom_produit": "pantalon femme"  ,  "prix": 28 , "photo": "tshirt.png"   },
+{ "nom_produit": "t-shirt femme"   ,  "prix": 35 , "photo": "pantalon.png" }
+]`;
+
+// ici on a une chaine de caracteres représentant un fichier JSON.
+let collection_femmes = JSON.parse(femmes) ;
+
+
+collection_femmes.forEach(function(produit) {
+  document.write("<h1>" + produit.nom_produit + "</h1>");
+  document.write("<ul>")
+  document.write(produit.prix + " €<br>");
+  document.write("<img src=" + produit.photo + " />");
+  document.write("</ul>");
+})
+
+
+</script> 
+</body>
+</html>

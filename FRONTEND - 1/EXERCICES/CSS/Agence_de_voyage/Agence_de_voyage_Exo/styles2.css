@@ -1,0 +1,249 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    font-family: Arial,sans-serif;
+    font-size: 15px;
+}
+
+h1,h2,h3,h4
+{
+  color: #444;
+}
+
+h1
+{
+    font-family: 'Crete Round', serif;
+    font-size: 45px;
+}
+
+h2
+{
+    font-size: 55px;
+}
+
+h3
+{
+    font-size: 30px;
+}
+
+h4
+{
+    font-size: 24px;
+}
+
+p
+{
+    line-height: 20px;
+    color: #777;
+}
+
+ul
+{
+    list-style: none;  /* enlève les points des listes */
+}
+
+a
+{
+    text-decoration: none;  /* enleve le bleu soulign" sur les elements anchor */
+    color: #444;
+    margin-right: 20px;
+  
+}
+
+.wrapper
+{
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.clear {
+    clear:both;
+}
+
+header h1 {
+    float:left;
+    margin-top: 32px;
+}
+
+header nav {
+    
+    /*float: right; (possible de mettre cette commande à la place de celle ci-dessous) */
+    float: right;
+    margin-top: 50px;
+    /* Si on utilise le float, il faut prévoir un clear pour que ce qui vient après se mette plus bas que ce bloc (cf. class clear dans le HTML
+    qui renvoie à un clear:both dans le CSS.
+    (Sinon, à la place du float, possible de mettre la commande ci-dessous. Et dans ce cas, pas la peine de mettre un clear)
+    position:absolute;
+    left:  70%; */
+}
+
+header nav ul li
+{
+    float:left;
+    /* display: inline-block; (possible de mettre cette commande à la place de celle ci-dessus pour avoir un résultat équivalent) */
+}
+
+/* MAIN IMAGE */
+
+#main-image
+{
+    height: 580px;
+    background: url('images/main1.jpg') no-repeat center;
+    background-size: cover;
+}
+
+#main-image h2
+{
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 150px 0 40px 0;
+    margin-bottom: 20px;
+}
+
+.button-1
+{
+    display: block;
+    width: 120px;
+    height: 50px;
+    background: #ff7a00;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 auto;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 13px;
+    /*L'élément <a> étant de type inline, on le transforme en bloc pour lui donner des propriétés de type block ex: height, width*/
+}
+
+.button-1:hover
+{
+    background: #02b8dd;
+}
+
+/* STEPS */
+
+#steps ul
+{
+    margin: 80px 0;
+}
+
+#steps ul li
+{
+    width: 300px;
+    float: left;
+    padding-top: 140px; /* Cette ligne permet de descendre le texte, ce qui permettra d'avoir l'image au-dessus*/
+    text-align: center;
+    margin-right: 10px;
+}
+
+#steps h4
+{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#steps p
+{
+    margin-bottom: 20px;
+}
+
+#step-1
+{
+    background: url('images/steps-icon-1.png') no-repeat top center;
+}
+
+#step-2
+{
+    background: url('images/steps-icon-2.png') no-repeat top center;
+}
+
+#step-3
+{
+    background: url('images/steps-icon-3.png') no-repeat top center;
+}
+
+/* #possibilities article:first-child
+{
+    margin: 20px;
+} */
+
+#possibilities
+{
+    background-color: lightgrey;
+}
+
+#possibilities article:first-child
+{
+    width: 450px;
+    height: 250px;
+    float: left;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+#possibilities article:nth-child(2)
+{
+    width: 450px;
+    height: 250px;
+    float: right;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.overlay
+{
+    float: left;
+    width: 220px;
+    height: 250px;
+    background-color: white;
+    border-radius: 20px 0 0 20px;
+}
+
+#possibilities h4
+{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px;
+    width: 200px;
+}
+
+#possibilities p
+{
+    font-style: italic;
+    text-align: center;
+    margin: 15px;
+    font-size: 20px;
+    width: 200px;
+}
+
+.button-2
+{
+    display: block;
+    float:left;
+    width: 160px;
+    height: 35px;
+    background: #ff7a00;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 30px;
+    line-height: 35px;
+    text-align: center;
+}
+
+/* CONTACT */
+
+#contact h3
+{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px;
+    border-bottom: solid lightseagreen ;
+}
+

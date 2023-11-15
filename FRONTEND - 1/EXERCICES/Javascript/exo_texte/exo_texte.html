@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "nom"></div>
+    <input id="saisie" type="text">
+    <script>
+              
+        // // Ma solution :
+        
+        // document.getElementById('saisie').addEventListener("blur", afficheTexte)
+
+        // function afficheTexte() {
+        //     let sortie = document.getElementById('saisie').value;
+        //     let parag = document.createElement('p');
+        //     let text = document.createTextNode(sortie)
+        //     parag.append(text);
+        //     document.body.append(parag);
+        // }
+
+
+        // // Solution de JAM :
+        // document.getElementById('saisie').addEventListener("blur", function() {
+        //     document.getElementById('nom').innerHTML = this.value
+        // })
+        
+
+        // Modification en utilisant keyup :
+        document.getElementById('saisie').addEventListener("keyup", function() {
+            document.getElementById('nom').innerHTML = this.value
+        })
+
+    </script>
+
+</body>
+</html>
+
+
+

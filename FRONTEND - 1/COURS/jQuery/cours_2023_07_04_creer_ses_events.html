@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        p {
+            width: 400px;
+            height: 250px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <p>Un texte</p>
+        <p>Autre paragraphe</p>
+        <button>go</button>
+    </div>
+
+<script>
+    $(document).ready(function(){
+
+    // 1ère manière d'écouter unevent et modifier le texte :
+
+        // $('p').click(function(){
+            // Si tu cliques sur <p>Un texte</p>,
+            // il renvoie : "Un texte"
+            // console.log( $(this).text())
+
+            // Si on veut remplacer ce texte :
+            // $(this).text(' dans la page')
+
+            // Si on veut rajouter du texte :
+            // $(this).text($(this).text() + ' dans la page')
+            // $(this).text('la page ' + $(this).text())
+        // })
+
+    // 2ème manière. Fera exactement la même chose.
+    // Pour on :
+    //   1er argument : l'event en mode string.
+    //   2ème argument : function de callback qui sera exécutée lors du click.
+        // $('p').on('click', function(){
+        //     $(this).text($(this).text() + ' dans la page')
+        // })
+
+    // 3ème manière.
+    // Ecoute de l'évènement sur toute la zone div id="container"
+    // et déclenchement de la fonction sur la sélection qui est écrite en 2ème argument
+    // (Il vaut mieux réduire au maximum la zone d'écoute, car plus elle est étendue,
+    // plus c'est cher en traitement (ça prend de ressources, plus de temps). Donc, en général, il vaut mieux mettre
+    // l'écoute sur le parent direct.)
+        $('div#container').on('click','p', function(){
+            $(this).text($(this).text() + ' dans la page')
+        })
+
+
+    })
+
+
+
+</script>
+</body>
+</html>

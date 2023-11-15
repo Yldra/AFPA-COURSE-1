@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: blue;
+        }
+        .db {
+             display: inline-block ;
+             width: 100px ;
+             height: 50px ;
+        }
+        .db:nth-child(1) {
+            background-color: #7fffd4;
+        }
+        .db:nth-child(2) {
+            background-color: #a8eb2c;
+        }
+        .db:nth-child(3) {
+            background-color: #2ceb45;
+        }
+        .db:nth-child(4) {
+            background-color: #eb2cb2;
+        }
+        #hamburger { 
+            display:none; 
+        }
+
+/* s'applique sur les écrans inferieurs à 600 pixel  */
+/* ce style s'applique de 0 à 600 pixels */
+@media screen and (max-width: 600px) {
+    p
+    {
+        color: rgb(43, 255, 0); 
+        background-color: black;
+        font-size: 1.2em;
+    }
+    .db {
+        display:none;
+    }
+    #hamburger { display:block; }
+    
+}
+
+/* ce style s'applique de 600 à 700 pixels */
+@media screen and (min-width: 600px) and (max-width: 700px) {
+    p
+    {
+        color: rgb(255, 145, 0); 
+        background-color: red;
+        font-size: 1.2em;
+    }
+    .db:nth-child(2) {
+			background-color: #eb2c5f;
+		}
+}
+
+/* ce style s'applique de 700 à 900 pixels */
+@media screen and (min-width: 700px)  {
+    p {
+        color: rgb(132, 0, 255); 
+        background-color: rgb(102, 17, 17);
+        font-size: 1.2em;
+    }
+   
+}
+
+/* ce style s'applique au-dessus de 900 pixels */
+@media screen and (min-width: 900px) {
+    p {
+        color: rgb(255, 0, 0); 
+        background-color: grey;
+        font-size: 1.2em;
+    }
+   
+}
+
+
+
+        </style>
+</head>
+<body>
+    <div id="hamburger">=</div>
+    <div id="container">
+        <div class="db">About</div>
+        <div class="db">Contact</div>
+        <div class="db">chapitre1</div>
+        <div class="db">chapitre2</div>
+    </div>
+    <p>MEDIA-QUERIES <span id="resol"></span></p>
+</body>
+</html>

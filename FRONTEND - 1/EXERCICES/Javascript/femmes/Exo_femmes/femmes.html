@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<nav>
+    <ul id="menu">
+        <li>
+            <a href="femmes.html">FEMMES</a>
+        </li>
+        <li>
+            <a href="hommes.html">HOMMES</a>
+        </li>
+    </ul>
+
+    <div id="catalogue">
+       
+    </div>
+ 
+    </div>
+</nav>
+<script>
+    //
+    // depuis E6 on peur servir du backquote pour entourer une chaine de caractères en multiligne et pouvoir utiliser des ' et des " sans se soucier 
+    // de la prédécence des quotes ' avec les doubles quotes ".  
+    //
+    // voici un tableau d'objets en json ayant 2 objet categories dont les clés sont (hommes,femmes) et les valeurs de ces clés sont des tableaux
+    // d'objets contenant les valeurs noms/ prenoms.
+    // 
+    // Object.keys renvoi les clés  et Object.values renvoi les values 
+    // 
+    
+    var femmes = `[
+                    { "nom_produit": "robe classe"     ,  "prix": 25 , "photo": "robef.png"    },
+                    { "nom_produit": "pantalon femme"  ,  "prix": 28 , "photo": "tshirt.png"   },
+                    { "nom_produit": "t-shirt femme"   ,  "prix": 35 , "photo": "pantalon.png" }
+                  ]`;
+                              
+    // on transforme la chaine représentant le Json 
+    //console.log("femmes est de type:", typeof femmes);
+    var tobj = JSON.parse(femmes);
+   
+    //console.log("ce tobj:",tobj, "est de type" , (typeof tobj));
+    // tobj est un objet ressemblant beaucoup au Json ci-dessus 
+    var i = 0 ; // je déclare une variable à zero.
+    $("#catalogue").append("<h1>FEMMES</h1>") ;
+    for ( i ; i < tobj.length ; i++ ) {
+  //  console.log("objet à l'indice",i,"de tobj:",tobj[i]);
+    $("#catalogue").append( "<p>"+
+                            "<img src='"+ 
+                            tobj[i].photo +
+                            "'>" + 
+                            tobj[i].nom_produit +
+                            " au prix de :" +
+                            tobj[i].prix  +
+                            "€ </p>") ;
+    }
+
+  
+
+</script>
+</body>
+</html>

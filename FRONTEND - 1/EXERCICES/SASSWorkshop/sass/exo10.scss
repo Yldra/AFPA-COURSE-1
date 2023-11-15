@@ -1,0 +1,10 @@
+$content-width: 600px;
+content {
+  width:$content-width;
+}
+.inner-content {
+  width: $content-width - 60px; // substraction
+}
+.outer-content {
+  width: $content-width + 60px; // addition
+}

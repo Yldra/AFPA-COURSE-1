@@ -1,0 +1,51 @@
+* {
+    margin: 10;
+    padding: 10;
+}
+
+/* Container */
+
+#container {
+    display: flex;
+}
+
+/* Colonne 1 */      /* #container #colonne_1 ou directement #colonne_1 ? */
+
+#colonne_1 {
+    /* background-color: lightblue;
+    border: 1px solid black; */
+    flex-grow: 3;
+}
+
+#colonne_1 h1 {
+    color: rgb(175,30,45);
+    text-transform: uppercase;
+}
+
+#colonne_1 h2 {
+    color: rgb(175,30,45);
+    text-transform: uppercase;
+}
+
+#colonne_1 h3 {
+    font-weight: bold;    
+}
+
+/* Colonne 2 */
+
+#colonne_2 {
+    background-color: rgb(175,30,45);
+    color: white;
+    /* border: 1px solid black; */
+    flex-grow: 1;
+}
+
+/* Rubriques */
+
+.rubrique > div {
+    border: 1px solid red;
+}
+
+img {
+    width: 10%;
+}

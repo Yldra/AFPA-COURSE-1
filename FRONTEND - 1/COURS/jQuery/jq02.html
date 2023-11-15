@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <style type="text/css">
+        div {   height: 100px; 
+                width: 600px; 
+                background-color: blueviolet ; 
+                border: 1px solid black;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="row1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error repellendus maxime aut temporibus nemo, ea corrupti exercitationem laboriosam facilis ut enim neque expedita illo illum libero. Dignissimos ducimus dicta assumenda.</div>
+        <div class="row" id="row2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis laborum consequatur repellendus reprehenderit repudiandae quos animi enim nobis amet deserunt! Numquam sed corporis harum quae ea ratione quo illo corrupti.</div>
+        <div class="row" id="row3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur numquam rem at beatae blanditiis corrupti a, voluptatibus eos molestias consequuntur ex eaque, nesciunt unde ullam illum eveniet, non temporibus.</div>
+        <div class="row" id="row4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta optio veniam fuga pariatur suscipit amet illum est dolor, exercitationem, commodi labore, totam deserunt blanditiis dolorum quod cumque ducimus facilis odit?</div>
+        <div class="row" id="row5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptate, ex itaque nobis atque iste voluptatum vero nesciunt, distinctio culpa doloremque earum? Inventore quisquam nisi velit minima veritatis quibusdam minus.</div>
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+            
+            // On va changer la couleur du row qui est survolé par la souris et on va
+            // revenir à la couleur initiale quand la souris ne survole plus.
+            // (On pourrait le faire en JS, mais beaucoup plus facile avec jQ) :
+           $(".row").mouseover(function () {
+                    $(this).css("background","red")
+           });
+           $(".row").mouseout(function () {
+                    $(this).css("background","blueviolet")
+           });
+
+    })
+    </script>
+   
+</body>
+</html>

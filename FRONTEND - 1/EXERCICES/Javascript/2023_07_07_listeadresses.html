@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+   
+   <script>
+      const montablo = [
+          { nom: "pierre" ,   titre: "Doctor",        adresse: { norue:"8", rue:"rue jean-jaures",cp: "29200",ville: "BREST" } },
+          { nom: "paul" ,     titre: "Pr",            adresse: { norue:"28", rue:"du port",cp: "79200",ville: "TOULON" }},
+          { nom: "jacques" ,  titre: "mdc",           adresse: { norue:"18", rue:"rue des glas",cp: "3500",ville: "RENNES" }},
+          { nom: "emile" ,    titre: "mdc",           adresse: { norue:"8bis", rue:"rue Gambetta",cp: "29000",ville: "QUIMPER" }}
+      ]
+
+      montablo.map( (i) =>  { // console.log(i)
+                              let h1 = document.createElement("h1");  // <h1></h1> qque part en mémoire
+                              h1.innerHTML =   i.nom            // <h1>pierre</h1>
+                              document.getElementById("app").appendChild(h1);   // <div id="app"><h1>pierre</h1></div>
+
+                              let p1 = document.createElement("p");  // <p></p> qque part en mémoire
+                              p1.innerHTML =   i.titre;                 //  <p>Doctor</p> qque 
+                              document.getElementById("app").appendChild(p1);  //  <div id="app"><h1>pierre</h1><p>Doctor</p></div>
+                             
+                              let br = document.createElement("br"); // br qque en  mémoire
+                              let p3;
+
+                              // traitement de l'adresse.
+                              for (j in i.adresse) {
+                                p3 = document.createElement("span");  // création d'un span </span></span> qque part en mémoire
+                                  p3.innerHTML =   `${i.adresse[j]} `//  dans le span </span>8</span> 
+                                  document.getElementById("app").appendChild(p3);  // <div id="app"><h1>pierre</h1><p>Doctor</p><span>8</span></div>
+                                  if( j == "rue" ) {
+                                    document.getElementById("app").appendChild(br);  
+                                  }
+                              }
+
+                              let hr = document.createElement("hr");
+                              document.getElementById("app").appendChild(hr);
+                            })
+    </script>
+  </body>
+</html>

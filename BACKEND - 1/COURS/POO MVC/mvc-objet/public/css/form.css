@@ -1,0 +1,74 @@
+/* Styles for the form container */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Styles for headings */
+h2 {
+    color: #333;
+}
+
+/* Styles for labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    text-align: left;
+}
+
+/* Styles for input fields */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: left;
+    flex: 1; /* Makes both buttons take equal space */
+}
+
+/* Styles for the submit button */
+input[type="submit"] {
+    width: auto; /* Largeur automatique pour centrer le bouton */
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Ajout d'une marge pour espacer le bouton des champs */
+    flex: 1; /* Makes both buttons take equal space */
+}
+
+/* Hover effect for the submit button */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styles for the form */
+.form-note {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}

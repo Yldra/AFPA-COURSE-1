@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LISTE PERSONNES{% endblock %}
+
+{% block body %}
+<style>
+    p { font-size : 20px}
+</style>
+
+<div class="container text-center mt-5">
+    <h1>LISTE DES PROPRIETAIRES</h1>
+        <a href="{{ path('crea_personne') }}">
+    <button type="submit" class="btn btn-primary btn-sm">Créer</button></a>
+    <br>
+        {% for personne in personnes %}
+        <hr>
+        <a href="{{ path('personne', {'id': personne.id}) }}">
+            <h2>{{ personne.prenom }} {{ personne.nom }}</h2></a>
+        <hr>
+        {% endfor %}
+</div>
+</div>
+{% endblock %}

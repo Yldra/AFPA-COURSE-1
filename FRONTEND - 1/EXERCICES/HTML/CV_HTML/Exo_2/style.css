@@ -1,0 +1,214 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#hamburger { 
+    display:none; 
+}
+
+p {
+    border: 2px black;
+}
+
+.accueil {
+    text-transform: uppercase;
+}
+
+.menu li {
+    list-style: none;
+}
+
+table td {
+    border: solid black;
+}
+
+.coord_tab_1 {
+    /* float: left; */
+    border: 1px dashed red;
+    margin: 20px; 
+}
+
+.coord_tab_1 p {
+    /* float: left;  */
+    border: 1px solid blue;
+    margin: 10px
+} 
+
+.coord_tab_2 {
+    /* float: left;  */
+    border: 1px dashed green;
+    margin: 20px;
+}
+
+.coord_tab_2 p {
+    /* float: left;  */
+    border: 1px solid black;
+    margin: 10px
+}
+
+
+/* s'applique sur les écrans inferieurs à 600 pixel  */
+@media screen and (max-width: 600px) {
+    * {
+        background-color: bisque;
+        /* background-image: url(Images/matrix-g73fab2785_640.jpg); */
+        background-size: 100% auto;
+       }
+    
+    #hamburger {
+        color:black;
+        display:block;
+        width: 10%;
+        height: 5%;
+        margin: 5%;
+    }
+
+    .fa.fa-bars {
+        font-size: 200%;
+    }
+
+    .fa.fa-bars:hover {
+        color: darkred;
+    }
+
+    .menu {
+        display: none;
+    }
+    
+    .accueil {
+        color:brown;
+        font-family: 'Lato', sans-serif;
+
+    }
+    h1 {
+        text-align: center;
+        color: darkred;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+
+    img {
+        width: 50%;
+        padding: 0% 25% 0% 25%;
+    }
+
+    p.accueil {
+        margin: 10%;
+        text-align: center;
+    }
+
+    a {
+        color: darkred;
+        text-align: center;
+    }
+
+    .fa.fa-desktop {
+        color: bisque;
+        font-size: 300%;        
+    }
+
+    .fa.fa-desktop:hover {
+        color: darkred;
+        font-size: 300%;
+    }
+
+    #icon {
+        margin: 10%;
+        text-align: center;
+        color:darkred
+    }
+
+    #icon:hover {
+        color: bisque;
+    }
+}
+
+
+/* ce style s'applique de 600 à 800 pixels */
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    * {
+        background-color:cadetblue;
+    }
+    header div ul li {
+        border: black;
+        margin: 1%;
+    }
+    
+    header div ul li a {
+        color: red;
+        /* border: solid darkred; */
+    }
+
+}
+
+
+/* ce style s'applique au-dessus de 800 pixels */
+@media screen and (min-width: 800px) {
+    * {
+        background-color:rgb(180, 166, 168); 
+    }
+
+    .menu li {
+        display: inline-block;
+        padding: 1% ;
+        margin: 1% 1% 1% 1%;
+        border: solid;
+        border-radius: 20%;
+        background-color:white;
+    }
+
+    .menu a {
+        text-decoration: none;
+        font-weight:bold;
+        background-color: white;
+    }
+
+    h1 {
+        margin: 3%;
+    }
+
+    h1 {
+        text-align: center;
+        color: darkred;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+
+    img {
+        width: 200px;
+        display: block;
+        margin: auto;
+        /* padding: 0% 25% 0% 25%; */
+    }
+
+    p.accueil {
+        margin: 10%;
+        text-align: center;
+    }
+
+    a {
+        color: darkred;
+        text-align: center;
+    }
+
+    .fa.fa-desktop {
+        color: bisque;
+        font-size: 300%;        
+    }
+
+    .fa.fa-desktop:hover {
+        color: darkred;
+        font-size: 300%;
+    }
+
+    #icon {
+        margin: 10%;
+        text-align: center;
+        color:darkred
+    }
+
+    #icon:hover {
+        color: bisque;
+    }
+}

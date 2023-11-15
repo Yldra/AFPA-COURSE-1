@@ -1,0 +1,18 @@
+# Activer la réécriture d'URL
+RewriteEngine On
+
+# Définit la règle de réécriture elle-même
+# RewriteRule: C'est la directive qui indique à Apache de rediriger l'URL en fonction d'un modèle spécifié.
+
+# ^([a-zA-Z0-9\-\_\/]*)$: C'est le modèle de correspondance d'URL. Dans ce modèle :
+# - ^ indique le début de la chaîne d'URL.
+# - () est une paire de parenthèses capturantes qui capture une partie de l'URL pour être utilisée plus tard.
+# - [a-zA-Z0-9\-\_\/]* est une expression régulière qui correspond à n'importe quelle combinaison 
+# de lettres minuscules et majuscules, de chiffres, de tirets -, de soulignements _, et de barres obliques /. Le * signifie que cela peut se produire zéro fois ou plusieurs fois.
+# - $ indique la fin de la chaîne d'URL.
+
+# index.php?execution=$1: C'est la destination de la réécriture. 
+# Elle indique à Apache quelle URL interne du serveur doit être exécutée à la place de l'URL demandée. 
+# Dans ce cas, elle redirige l'URL vers index.php et transmet la partie capturée de l'URL en tant que paramètre GET nommé execution. 
+# Le $1 est une référence à la partie capturée de l'URL entre parenthèses dans le modèle.
+RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?execution=$1

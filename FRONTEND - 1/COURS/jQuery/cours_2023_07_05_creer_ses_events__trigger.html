@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        p {
+            width: 400px;
+            height: 250px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <p>Un texte</p>
+        <button>GO</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+                // Si p reçoit l'évènement monevent, il affiche le contenu dans la console.
+                // $('p').on('moneventAfpa', function () {
+                //     console.log($(this).text())
+                // })
+
+                // Quand je clique sur le bouton, je déclenche cet évènement.
+                // $('button').on('click', function () {
+                //     $('p').trigger('moneventAfpa')
+                // })
+
+            // On peut ajouter des paramètres.
+            // (Les paramètres sont rentrés sous forme de tableau.)
+            $('p').on('moneventAfpa', function (evt, param1, param2) {
+                // console.log($(this).text() + param1 + param2);
+                let t = ($(this).text() + param1 + param2);
+                $(this).text(t)
+            })
+
+            $('button').on('click', function () {
+                $('p').trigger('moneventAfpa', [' dans la page', ', en plus'])
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>

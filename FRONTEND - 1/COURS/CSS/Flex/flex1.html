@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: #000000;
+            display: flex; /* les éléments contenus dans ce bloc seront dispatchés de manière flexible*/
+            flex-direction: row; /*positionne les éléments horizontalement*/
+            justify-content: space-around; /*centre les items */
+        }
+
+        .item {
+            width: 200px;
+            height: 200px;
+            color: white;
+            background-color: rgb(255, 0, 0);
+            text-align: center;
+            border: 2px solid silver;
+        }
+
+        .item:nth-child(2) {
+            flex-shrink: 3;
+        }
+
+        /* .item:nth-child(4) {
+            width:50px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+</body>
+</html>

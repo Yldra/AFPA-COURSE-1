@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ACCUEIL{% endblock %}
+
+{% block body %}
+<style>
+    /* Styles CSS personnalisés peuvent être ajoutés ici */
+    /* Par exemple : */
+    .jumbotron {
+        background-color: #96a67c;
+    }
+</style> 
+
+<div class="container text-center mt-5">
+    <div class="jumbotron">
+<h1>
+    {% if app.user %}
+        Heureux de vous revoir {{ app.user.prenom }} {{ app.user.nom }} !
+    {% else %}
+        Bienvenue,<br> Vous pouvez nous rejoindre ici : <a href="{{ path('app_inscription') }}">Inscription</a>
+    {% endif %}
+</h1>
+
+        <p>Ce projet vous permet de découvrir et explorer le monde des animaux.</p>
+        <p>Utilisez la navigation pour accéder aux informations sur les continents, les espèces et les animaux.</p>
+        <p>Commencez par <a href="{{ path('app_continents') }}">explorer les continents</a>.</p>
+    </div>
+</div>
+{% endblock %}

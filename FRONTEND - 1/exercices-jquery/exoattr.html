@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+    <div class="demo" id="id1">un</div>
+    <div class="demo" id="id2">deux</div>
+    <div class="demo" id="id3">trois</div>
+<script>
+
+var liste = document.getElementsByClassName("demo")
+for (var i=0 ; i < liste.length ; i++) { 
+    console.log(liste[i])
+    liste[i].addEventListener("click",function(){
+        console.log(this.getAttribute("id"));
+        console.log(this.innerHTML);
+        console.log(this.nodeName);
+    })
+}
+
+
+
+</script>
+</body>
+</body>

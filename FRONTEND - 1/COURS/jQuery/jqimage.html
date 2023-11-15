@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <img id="image1"></img>
+    <button>image</button>
+
+    <script>
+        $(document).ready(function() {
+            $("button").click(function(){
+                $("#image1").attr('src', "http://via.placeholder.com/350")
+                // 350 correspond à un carré de 350px x 350px généré sur le site via.placeholder.
+                // Pour avoir par exemple un rectangle de 350px x 200px, il faudrai taper 350x200.
+                // (via.placeholder.com est un générateur d'image à utiliser dans les maquettes. Il
+                // suffit de saisir leur URL d'image et de modifier avec nos paramètres de taille.)
+                console.log($("#image1").attr('src'))
+                // Ci-dessus, ligne facultative : permet de voir, dans la console,
+                // la source de l'attribut (l'image ici).
+            })
+        })
+
+
+
+    </script>
+</body>
+</html>

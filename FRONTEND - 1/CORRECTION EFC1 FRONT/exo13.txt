@@ -1,0 +1,5 @@
+$(document).ready(function() {
+ …
+})
+
+La fonction ci-dessus sert à attendre que la page soit chargée avant d'exécuter ce qui se trouve dans le bloc {}.

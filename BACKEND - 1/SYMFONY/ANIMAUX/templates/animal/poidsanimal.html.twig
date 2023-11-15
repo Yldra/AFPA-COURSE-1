@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LISTE ANIMAUX{% endblock %}
+
+{% block body %}
+<style>
+    p { font-size : 20px}
+
+    .custom-success-message {
+    /* Add your custom CSS styles here */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+</style>
+
+<div class="container text-center mt-5" style="width: 25%;">
+
+<h1>Poids Animal</h1>
+ {% for animal in animaux %}
+        <h2>{{ animal.nom }}</h2>
+
+        {% endfor %}
+
+
+</div>
+{% endblock %}
+
+
+

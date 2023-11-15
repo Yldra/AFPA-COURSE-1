@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+<div id="toto"></div>
+<script>
+// creation d'un element <p>
+var newP = document.createElement("p");
+// creation d'un noeud texte
+var newTxt = document.createTextNode("contenu");
+// ajout du noeud texte à l'élément <p>
+newP.appendChild(newTxt);
+
+// reference à l'élément #toto
+var maDiv = document.getElementById("toto");
+// ajout de lélément <p> à maDiv
+maDiv.appendChild(newP);
+
+maDiv.style="color:red" ;
+
+// créer un élémént <a>
+var monA = document.createElement("a");
+// créer l'attribut href de cet elemenr monA
+monA.setAttribute("href", "http://example.com");
+// créer l'attribut title de cet element monA
+monA.setAttribute("title", "Exemple");
+
+// creation d'un noeud texte
+var monText = document.createTextNode("Le site example.com");
+// ajout du texte à monA
+monA.appendChild(monText);
+// ajout monA à maDiv
+maDiv.appendChild(monA);
+</script>
+</body>
+</html>

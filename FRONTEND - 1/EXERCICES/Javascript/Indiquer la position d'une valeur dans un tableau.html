@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- INSTUCTIONS
+    t = [ -2 , -1 , 0 , 13, 24, 37, 44 ,56 , 99 , 117 ] ;
+    x=117
+    var position = recherche(t,x)
+    console.log(position)
+    faire la fonction   recherche(tableau,valeur) {} -->
+
+    <!-- CORRECTION -->
+    
+    function position (t,n){
+      for (var r=0;r< t.length; r++) {
+          if (t[r] == n)  {
+                  return(r)
+          }
+      }
+      }
+      
+      t = [ -2 , -1 , 0 , 13, 24, 37, 44 ,56 , 99 , 117 ] ;
+      var x = 117
+      console.log(position(t,x))
+
+    <!-- CE QUE J'AI FAIT -->
+
+    <!-- function recherche(tableau, valeur) {
+      for (var i = 0 ; i < tableau.length ; i++) {
+        if (tableau[i] == valeur) {
+          return(i+1)
+        }
+      }
+    }
+    
+    var t = [-2, -1, 0, 13, 24, 37, 44, 56, 99, 117];
+    var x = 117;
+    var position = recherche(t,x)
+    console.log('La valeur', x, 'est en position', position) -->
+    
+    
+    
+    <!-- /* function recherche(tableau, valeur) {
+      for (var i = 0 ; i < tableau.length ; i++) {
+        if (tableau[i] == valeur) {
+          console.log(i)
+        }
+      }
+    }
+    
+    var t = [-2, -1, 0, 13, 24, 37, 44, 56, 99, 117];
+    var x = 117;
+    recherche(t,x) */ -->
+</head>
+<body>
+    
+</body>
+</html>

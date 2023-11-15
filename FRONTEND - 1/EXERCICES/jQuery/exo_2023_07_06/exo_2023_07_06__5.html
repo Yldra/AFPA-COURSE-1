@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin:0 ;
+            padding: 0 ;
+            border:0 ;
+        }
+
+        div {
+            width: 500px ;
+            height: 500px; 
+            border:1px solid black ;
+            
+        }
+       
+        p {
+            width:4px ; height: 4px; background-color: black ; position:absolute; top:0px ; left:0px ;z-index:999;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="stop">stop</button>
+    <div>
+
+        
+    </div>
+    
+    <script>
+
+
+        function sm(event) {
+                event.preventDefault()
+                console.log(event.clientX + ":" + event.clientY);
+                let point = document.createElement('p')
+                point.innerHTML = '&nbsp'
+                point.style.top = event.clientY + "px"
+                point.style.left = event.clientX + "px"
+                document.querySelector('div').append(point)
+       }
+        
+       document.querySelector('div').addEventListener('mousemove',sm )
+
+
+       $('#stop').click( () =>  document.querySelector('div').removeEventListener('mousemove',sm))
+    
+    </script>
+</body>
+</html>

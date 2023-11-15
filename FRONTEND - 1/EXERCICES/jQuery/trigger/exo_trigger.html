@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <title>Exo trigger</title>
+    <style>
+        p {
+            height: 100px;
+        }
+
+        p#un {
+            position: absolute;
+            top: 200px;
+            left: 300px;
+            width: 200px;
+            color: red;
+            font-size: 1em;
+            background-color: aqua;
+        }
+
+        p#deux {
+            position: absolute;
+            top: 00px;
+            left: 500px;
+            color: green;
+            font-size: 1.5em;
+            width: 200px;
+            background-color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <p id="un"></p>
+        <p id="deux"></p>
+        <input />
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            // on écoute l'input et sur le keyup, on déclenche la fonction,
+            // qui va entre autres faire appel à l'évènement "monevent" qu'on
+            // va créer plus loin :
+            $('input').keyup(function () {
+                $('p').trigger('monevent', [$(this).val()])
+                // ou bien, à la place de cette ligne, les deux suivantes :
+                // let frappe = $(this).val()
+                // $('p').trigger('monevent', [frappe])
+            })
+
+            // On crée notre évènement personnalisé ("monevent") :
+            $('p').on('monevent', function(evt, param1){
+                $('p').text(param1)
+            })
+
+            // Ci-dessus, pour l'exercice, on fait appel un évènement qu'on a créé.
+            // Mais dans ce cas précis, on aurait pu s'en passer et arriver au
+            // même résultat final en faisant :
+            // $('input').keyup(function () {
+            //     let frappe = $(this).val()
+            //     $('p').text(frappe)                
+            // })
+
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

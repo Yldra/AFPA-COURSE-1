@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    border-width: 10px;
+    border-style: solid;
+    border-color: red;
+}
+
+nav{
+    position: absolute;
+    top: 40px;
+    right: 100px;
+}
+
+h1 {
+    height: 20px;
+    width: 60%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    padding: 20px;
+    font-family: 'Crete Round';
+    font-size:2em;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 strong {
+    font-weight: bold;
+}
+
+#main-image {
+    background-image: url('images_2/images/main1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 45px;
+}
+
+.wrapper {
+    border-width: 5px;
+    border-style: solid;
+    border-color: greenyellow;
+}
+
+.overlay {
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(9, 179, 108);
+}
+
+.orange {
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(83, 143, 56);
+    color: #FD7A23;
+}
+
+.copyright {
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(234, 250, 5);
+}
+
+
+#liste {
+    border-width: 5px;
+    border-style: solid;
+    border-color: blueviolet;
+    display: inline-block;
+}
+
+#liste li {
+    border-width: 5px;
+    border-style: solid;
+    border-color: blueviolet;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.7em;
+}
+
+#toto {
+    display: none;
+}

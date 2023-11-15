@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<body>
+<div id="toto"></div>
+<script>
+//--x----------------------------------------------------------------
+// Introduction aux tableaux
+// Le tableau JavaScript est un objet qui représente une collection 
+// de types d’éléments similaires
+//-------------------------------------------------------------------
+
+var datas=["item un","item deux","item trois"]; 
+
+var test=document.createElement('section');
+test.setAttribute('id','test');
+
+var ul=document.createElement('ul');
+
+document.body.appendChild(test);
+test.appendChild(ul);
+
+    var li=document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML=datas[0];
+    var li=document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML=datas[1]
+    var li=document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML=datas[2]
+
+</script>
+</body>
+</html>

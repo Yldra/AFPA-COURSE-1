@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX GROW</title>
+    <style>
+
+        /* - order    */ 
+
+        .container {
+          /* height: 500px;*/
+            background-color: grey ;
+            display:flex ;
+        }
+
+        .item {  
+            width: 100px ;
+            height:150px ;
+            background-color: aqua;
+            border: 1px solid red ;
+            font-size: 24px;
+            text-align:center ;
+            margin:5px;
+            flex-grow: 1 ; /* 
+                                au départ même valeur pour tous
+                                si je mets flex-grow: 2 sur item2
+                                itel2 va prendre 2 fois la valuer qui reste
+                                
+                            */
+        }
+
+        .item:nth-child(1) {
+            
+        }
+
+        .item:nth-child(2) {
+            flex-grow: 2;
+        }
+
+        .item:nth-child(3) {
+           
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    
+</body>
+</html>

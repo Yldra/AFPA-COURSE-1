@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<div id="clients">
+    <p class="client" id="1">Smith John</p>
+    <p class="client" id="2">Dupond Lucien</p>
+    <p class="client" id="3">Pol Jak</p>
+</div>
+
+
+<script>
+        
+    // Pour récupérer la valeur d'un attribut d'un client (ici, l'attribut id) :
+
+    $("#clients").on('click', ".client", function(){
+        console.log( $(this).text() );
+        console.log( $(this).attr('id') );  //attr correspond au getAttibute du javascript
+        // let lid = $(this).attr('id')
+    })
+
+    
+
+</script>
+
+
+
+</body>
+</html>

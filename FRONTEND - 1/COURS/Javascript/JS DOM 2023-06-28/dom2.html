@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .disp {
+            display: none;
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+    
+    <button id="bouton">Voir contenu de p</button>
+
+    <button id="bouton2">Voir ou masquer contenu de p</button>
+
+    <div id="container"></div>
+
+    <script>
+        
+        // Ci-dessous : fonctionnement de base :
+            // let newp = document.createElement('p');
+            // // Quelque part en mémoire, j'ai <p></p>
+            // let newtexte = document.createTextNode("contenu de p");
+            // newp.append(newtexte)
+            // // Quelque part en mémoire, j'ai <p>contenu de p</p>
+            // let mondiv = document.getElementById("container");
+            // mondiv.append(newp);
+        
+        
+        // Exercice : créer une fonction qui affiche le contenu de p quand on clique sur le bouton :
+        
+        let newp = document.createElement('p');
+        let newtexte = document.createTextNode("contenu de p");
+        
+        document.getElementById('bouton').addEventListener('click', chercherContenuDeP)
+
+        function chercherContenuDeP() {
+            let mondiv = document.getElementById("container");
+            mondiv.append(newp)
+            newp.append(newtexte)                    
+        }
+        
+
+        // Exercice : créer une fonction qui affiche ou efface le contenu de p quand on clique sur un autre bouton :
+        // Ci-dessous : le bouton "Voir ou Masquer" de JAM qui permet d'afficher / masquer ce qui a été affiché avec le bouton "Voir contenu de p".
+        // (Mais ne marche pas si on commence par appuyer sur ce bouton alors qu'il n'y a rien à l'écran)
+
+        document.getElementById('bouton2').addEventListener('click', afficherMasquerContenuDeP)
+
+        function afficherMasquerContenuDeP() {
+                let lep = document.getElementsByTagName('p')[0]
+                lep.classList.toggle('disp')
+        }
+
+        // Mon essai préalable : NE MARCHE PAS BIEN !!!
+        // 
+        // document.getElementById('bouton2').addEventListener('click', afficherMasquerContenuDeP)
+        // 
+        // let newNewP = newp
+        // let newNewTexte = newtexte
+        // let leContenu = false;
+        // let leb = document.getElementsByTagName('p')       
+        // function afficherMasquerContenuDeP() {
+        //     if (leContenu == false) {
+        //         leContenu = true
+        //         let mondiv = document.getElementById("container");
+        //         mondiv.append(newNewP)
+        //         newp.append(newNewTexte)
+        //         for (let elt of leb) {
+        //             elt.classList.remove('disp')
+        //             }
+        //         } else {
+        //             leContenu = false
+        //             for (let elt of leb) {
+        //                 elt.classList.add('disp')
+        //             }
+        //         }
+        //     }
+    
+
+    </script>
+
+</body>
+</html>

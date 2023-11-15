@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Horloge</title>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+	<style>
+	/* Positions des chiffres sur le cadran*/
+		#chiffre12{position: absolute; top: 100px; left: 200px}
+		#chiffre11{position: absolute; top: 113px; left: 150px}
+		#chiffre10{position: absolute; top: 150px; left: 113px}
+		#chiffre9 {position: absolute; top: 200px; left: 100px}
+		#chiffre8 {position: absolute; top: 250px; left: 113px}
+		#chiffre7 {position: absolute; top: 287px; left: 150px}
+		#chiffre6 {position: absolute; top: 300px; left: 200px}
+		#chiffre5 {position: absolute; top: 287px; left: 250px}
+		#chiffre4 {position: absolute; top: 250px; left: 287px}
+		#chiffre3 {position: absolute; top: 200px; left: 300px}
+		#chiffre2 {position: absolute; top: 150px; left: 287px}
+		#chiffre1 {position: absolute; top: 113px; left: 250px}
+	/* Position du rond central*/
+		#centre {position: absolute; top: 200px; left: 200px; font-family: arial}
+		
+	/* Positions initiales des aiguilles */
+		#aiguilleheure  {position: absolute; top: 110px; left: 200px}
+		#aiguilleminute {position: absolute; top: 110px; left: 200px}
+	</style>
+</head>
+
+<body>
+
+	<p>Une petite horloge...<input type="button" value="Lancer!" onclick="lance()"><input type="button" value="Arrêter!" onclick="stop()"></p>
+
+	<div id="chiffre1"><p>1</p></div>
+	<div id="chiffre2"><p>2</p></div>
+	<div id="chiffre3"><p>3</p></div>
+	<div id="chiffre4"><p>4</p></div>
+	<div id="chiffre5"><p>5</p></div>
+	<div id="chiffre6"><p>6</p></div>
+	<div id="chiffre7"><p>7</p></div>
+	<div id="chiffre8"><p>8</p></div>
+	<div id="chiffre9"><p>9</p></div>
+	<div id="chiffre10"><p>10</p></div>
+	<div id="chiffre11"><p>11</p></div>
+	<div id="chiffre12"><p>12</p></div>
+	<div id="centre"><p>o</p></div>
+
+	<div><img alt="heures" src="rondbleu.png" height="21" id="aiguilleheure" width="21"></div>
+	<div><img alt="minutes" src="rondrouge.png" height="21" id="aiguilleminute" width="21"></div>
+
+
+	<script>
+
+		ind=1
+		let ess = document.getElementById('chiffre'+ind)
+		alert(ess.innerHTML)
+
+		
+		var compteur_minutes=0;
+		var compteur_heures=0;
+
+		let rondBleuHeures = document.getElementById("aiguilleheure")
+		let rondRougeMinutes = document.getElementById("aiguilleminute")
+
+		let intervalM
+		let intervalH
+
+		function lance() {
+			intervalM = setInterval(minutes, 100)
+			intervalH = setInterval(heures, 1200)
+		}
+
+		function stop() {
+			clearInterval(intervalM)
+			clearInterval(intervalH)
+		}
+
+		function minutes() {
+		
+			let bouton_lancer = true;
+
+			if (bouton_lancer == true) {
+
+				switch (compteur_minutes) {
+					case compteur_minutes = 0:				
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "123px"
+						rondRougeMinutes.style.left = "250px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 1:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "160px"
+						rondRougeMinutes.style.left = "287px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 2:
+					rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "210px"
+						rondRougeMinutes.style.left = "300px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 3:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "260px"
+						rondRougeMinutes.style.left = "287px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 4:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "297px"
+						rondRougeMinutes.style.left = "250px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 5:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "310px"
+						rondRougeMinutes.style.left = "200px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 6:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "297px"
+						rondRougeMinutes.style.left = "150px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 7:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "260px"
+						rondRougeMinutes.style.left = "113px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 8:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "210px"
+						rondRougeMinutes.style.left = "100px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 9:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "160px"
+						rondRougeMinutes.style.left = "113px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 10:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "123px"
+						rondRougeMinutes.style.left = "150px"
+						rondRougeMinutes.style.display = "block"
+						break;
+					case compteur_minutes = 11:
+						rondRougeMinutes.style.display = "none"
+						compteur_minutes++
+						console.log("Minutes : " + compteur_minutes)
+						rondRougeMinutes.style.position = "absolute"
+						rondRougeMinutes.style.top = "110px"
+						rondRougeMinutes.style.left = "200px"
+						rondRougeMinutes.style.display = "block"
+						compteur_minutes=0
+						break;
+				}
+		}
+		}
+		
+		function heures() {
+						
+			let bouton_lancer = true;
+
+			if (bouton_lancer == true) {
+
+				switch (compteur_heures) {
+					case compteur_heures = 0:				
+						rondBleuHeures.style.display = "none"
+						compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "123px"
+						rondBleuHeures.style.left = "250px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 1:
+						rondBleuHeures.style.display = "none"
+						compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "160px"
+						rondBleuHeures.style.left = "287px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 2:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "210px"
+						rondBleuHeures.style.left = "300px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 3:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "260px"
+						rondBleuHeures.style.left = "287px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 4:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "297px"
+						rondBleuHeures.style.left = "250px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 5:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "310px"
+						rondBleuHeures.style.left = "200px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 6:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "297px"
+						rondBleuHeures.style.left = "150px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 7:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "260px"
+						rondBleuHeures.style.left = "113px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 8:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "210px"
+						rondBleuHeures.style.left = "100px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 9:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "160px"
+						rondBleuHeures.style.left = "113px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 10:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "123px"
+						rondBleuHeures.style.left = "150px"
+						rondBleuHeures.style.display = "block"
+						break;
+					case compteur_heures = 11:
+					rondBleuHeures.style.display = "none"
+					compteur_heures++
+						console.log("Heures : " + compteur_heures)
+						rondBleuHeures.style.position = "absolute"
+						rondBleuHeures.style.top = "110px"
+						rondBleuHeures.style.left = "200px"
+						rondBleuHeures.style.display = "block"
+						compteur_heures=0
+						break;
+				}
+		}
+		}
+
+		// function lance() {
+		// 	// setInterval(minutes, 1000)
+		// 	minutes()
+		// }
+
+		// toutes les secondes incrementer le compteur compteur_minutes
+		// puis quand compteur_minutes arrive à 0 , diviser compteur_minutes% 12 pour avoir la position du bouton bleu.
+		// Utiliser setInterval pour lancer et clearInterval quand on fait stop.
+	
+		
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FORMULAIRE INSCRIPTION{% endblock %}
+
+{% block body %}
+
+<div class="container text-center mt-5" style="width: 25%;">
+    <h1>FORMULAIRE D'INSCRIPTION</h1>
+    <br>
+    {% if app.user %}
+        <div class="mb-3">
+            Vous avez déjà un compte associé à : <strong style="bold black 1px">{{ app.user.userIdentifier }}</strong>
+            <br><a href="{{ path('home') }}" class="text-uppercase text-decoration-none"><br>Accueil</a>
+        </div>
+    {% endif %}
+
+{% if not app.user %}
+    {{ form_start(uform) }}
+
+            <div class="form-group">
+        {{ form_row(uform.civilite, {
+            'attr': {'class': 'form-control form-control-sm text-center text-center'},
+            'label': 'Civilité: '
+        }) }}
+    </div>
+
+            <div class="form-group">
+        {{ form_row(uform.prenom, {
+            'attr': {'class': 'form-control form-control-sm text-center'},
+            'label': 'Prénom: '
+        }) }}
+    </div>
+
+        <div class="form-group">
+        {{ form_row(uform.nom, {
+            'attr': {'class': 'form-control form-control-sm text-center'},
+            'label': 'Nom: '
+        }) }}
+    </div>
+
+        <div class="form-group">
+        {{ form_row(uform.age, {
+            'attr': {'class': 'form-control form-control-sm text-center'},
+            'label': 'Âge: '
+        }) }}
+    </div>
+
+            <div class="form-group">
+        {{ form_row(uform.telephone, {
+            'attr': {'class': 'form-control form-control-sm text-center'},
+            'label': 'Téléphone: '
+        }) }}
+    </div>
+
+                <div class="form-group">
+        {{ form_row(uform.photo, {
+            'attr': {'class': 'form-control form-control-sm text-center'},
+            'label': 'Photo: '
+        }) }}
+    </div>
+
+<div class="form-group">
+    {{ form_row(uform.email, {
+        'attr': {'class': 'form-control form-control-sm text-center', 'style': 'border: 1px solid black;'},
+        'label': 'E-Mail: '
+    }) }}
+</div>
+
+
+    <div class="form-group">
+        {{ form_row(uform.password, {
+            'attr': {'class': 'form-control form-control-sm text-center', 'style': 'border: 1px solid black;'},
+            'label': 'Password: '
+        }) }}
+    </div>
+
+            <div class="form-group">
+        {{ form_row(uform.roles, {
+            'attr': {'class': 'form-control form-control-sm text-center'},
+            'label': 'Rôle: '
+        }) }}
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    
+    {{ form_end(uform) }}
+    
+</div>
+{% endif %}
+{% endblock %}
+
+{# dump(app.user) #}

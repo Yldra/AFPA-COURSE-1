@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des acteurs{% endblock %}
+
+{% block body %}
+
+    {% if (app.user) %}
+        <h1>Bonjour {{ app.user.username }}
+    {% endif %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <h1>I AM THE KING </h1>
+    {% endif %}
+<table>
+{% for a in actors  %}
+<tr>
+<td><img src="{{ asset('images/acteurs/' ~ a.image ) }}" ></td>
+<td>
+    <a href="{{ 
+        path('afficheactor', {'id': a.id } )
+    }}">
+    {{ a.nom }}
+    </a>
+    
+    </td>
+<td>{{ a.prenom }}</td>
+<td>
+<a href="{{ 
+        path('modifactor', {'id': a.id } )
+    }}">
+    modif
+    </a>
+</td>
+</tr>
+{% endfor %}
+<table>
+
+{# {% for (movie in actor.movies ) %}
+    <h1>{{ movies.titre }}</h1>
+{% endfor %} #}
+
+{% endblock %}

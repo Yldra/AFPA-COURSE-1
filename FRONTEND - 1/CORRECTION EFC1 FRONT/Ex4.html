@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <style> 
+        .zone { height:100px ; width:100px; background-color: red ; } 
+        .vert{
+            background-color: green;
+        }
+    </style> 
+   
+    </head> 
+    <body> 
+
+        <div class="zone"></div> 
+        <button id="un">Click vert</button>
+        <button id="deux">Click Hello World</button>
+        <script> 
+            $(document).ready(function(){
+
+                $(document).on("mousemove",function(event){ 
+                    console.log(`Position de la souris : X = ${event.clientX} | 
+                    Y = ${event.clientY}`); 
+                }); 
+       
+            document.querySelector("button#un").addEventListener("click", function () { 
+                document.querySelectorAll(".zone").forEach(function (elt) {  
+                elt.classList.add("vert");  
+                })
+            })
+               
+        
+            document.querySelector("button#deux").addEventListener("click", function () {
+                document.querySelectorAll(".zone").forEach(function (elt) {
+                elt.textContent ="Hello World !"; 
+            
+                  });
+                });
+
+            })
+        
+            </script> 
+    </body> 
+    </html>

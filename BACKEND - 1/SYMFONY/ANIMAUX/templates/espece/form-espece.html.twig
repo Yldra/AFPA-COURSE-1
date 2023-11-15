@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FORMULAIRE ESPÈCE{% endblock %}
+
+{% block body %}
+
+<div class="container text-center mt-5" style="width: 25%;">
+
+    {{ form_start(eform) }}
+
+    <div class="form-group">
+        {{ form_row(eform.nom, {
+            'attr': {'class': 'form-control form-control-sm'},
+            'label': 'Nom: '
+        }) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_row(eform.description, {
+            'attr': {'class': 'form-control form-control-sm'},
+            'label': 'Description: '
+        }) }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    {{ form_end(eform) }}
+    
+</div>
+
+{% endblock %}

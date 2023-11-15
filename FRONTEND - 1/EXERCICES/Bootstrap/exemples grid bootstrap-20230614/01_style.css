@@ -1,0 +1,32 @@
+.row{ /* toutes les lignes */
+	text-align: center;
+	line-height: 40px; /* hauteur de la ligne */
+}
+[class*="col-"] { /* tous les attributs class = à %col-% */
+  	border: 2px solid black;
+  	border-radius: 6px; /* angles arrondis */
+} 
+[class*="-1"] { /* tous les attributs class = à %-4% */
+	background-color: yellow;
+}
+[class*="-2"] { /* tous les attributs class = à %-8% */
+  	background-color: yellow;
+}
+[class*="-3"] { /* tous les attributs class = à %-8% */
+  	background-color: yellow;
+}
+[class*="-4"] { /* tous les attributs class = à %-4% */
+	background-color: aqua;
+}
+[class*="-6"] { /* tous les attributs class = à %-8% */
+  	background-color: aquamarine;
+}
+[class*="-8"] { /* tous les attributs class = à %-8% */
+  	background-color: pink;
+}
+[class*="-10"] { /* tous les attributs class = à %-8% */
+  	background-color: turquoise;
+}
+[class*="-12"] { /* tous les attributs class = à %-8% */
+  	background-color: lightgreen;
+}

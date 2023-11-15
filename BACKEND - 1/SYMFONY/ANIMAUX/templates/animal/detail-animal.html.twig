@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DETAIL ANIMAL{% endblock %}
+
+{% block body %}
+<style>
+h2,h3,h4 {
+    text-decoration: underline;
+}
+p { 
+    font-size: 30px;
+}
+.bg-image {
+    position: relative;
+    z-index: 1;
+}
+
+.bg-image:before {
+    content: " ";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    opacity: .4; 
+    z-index: -1;
+    background: url("{{ asset('pictures/' ~ animal.image) }}");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+</style>
+
+<div class="bg-image">
+<div class="container text-center" style="width: 25%;">
+{# {{ dump(animal) }} #}
+    {% if previousAnimal %}
+    <p><a href="{{ path('app_animal', {'id': previousAnimal.id}) }}">
+    <button type="submit" class="btn btn-primary btn-sm">Précédent</button></a></p>
+    {% endif %}
+
+    {% if nextAnimal %}
+    <p><a href="{{ path('app_animal', {'id': nextAnimal.id}) }}">
+    <button type="submit" class="btn btn-primary btn-sm">Suivant</button></a></p>
+    {% endif %}
+
+    <p><a href="{{ path('modif_animal', {'id': animal.id}) }}">
+    <button type="submit" class="btn btn-primary btn-sm">Modifier</button>
+    </a></p>
+    
+    <p><a href="{{ path('suppr_animal', {'id': animal.id}) }}">
+    <button type="submit" class="btn btn-primary btn-sm">Supprimer</button>
+    </a></p>
+
+    <h1>Détails de "{{ animal.nom }}"</h1>
+
+    <img class="img-thumbnail rounded-square" src="{{ asset('pictures/' ~ animal.image) }}" alt="{{ animal.nom }}" height="300px" width="400px">
+    <h3>Bio :</h3>
+    <p>{{ animal.description }}
+    <h3>Nom Latin :</h3>
+    <p>{{ animal.nomLatin }}</p>
+    <h3>Poids :</h3>
+    <p>{{ animal.poids }}</p>
+    <h3>Espèce :</h3>
+    <p>{{ animal.espece.nom }}</p>
+    <h3>Origine :</h3>
+    {% for continent in animal.continents %}
+       <p> {{ continent.nom }} </p>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{
+    "name": "brian/mvcobjet",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "mvcobjet\\":"src"
+        }
+    },
+    "require": {
+        "klein/klein": "^2.1",
+        "twig/twig": "^3.7"
+    }
+}

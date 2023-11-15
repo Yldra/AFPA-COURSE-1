@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        p {
+            width: 100px;
+            height: 250px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <p>un texte dedans</p>
+    <button>go</button>
+
+<script>
+    $(document).ready(function () {
+        // quand je clique sur le bouton [go] je veux déclencher un event.
+        // sur un élément sélectionné.
+        $("button").click(function () {
+            $("p").trigger("totomonevt", [' la page', ' nickel'])
+        })
+ 
+        $("p").on("totomonevt", function(evt,param1,param2){
+            alert($(this).text() + param1 + param2 )
+        })
+                
+    });
+
+</script>
+
+</body>

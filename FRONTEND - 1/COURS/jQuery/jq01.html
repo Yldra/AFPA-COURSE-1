@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+</head>
+<body>
+
+    <button id="btn1">change css</button>
+    <button id="btn2">toggle</button>
+    <button id="btn3">ajoute du texte</button>
+
+    <div id="test">texte de test</div>
+
+    <input type="text" id="inp1" >
+
+    <div id="test2"></div>
+
+    <script>
+
+    $(document).ready(function() { // quand html est chargé
+
+        $("#btn1").click(function(){ // ecoute l'event click sur btn1
+            $("#test").css("color", "red"); // change le css color du div #test.
+        })
+
+        $("#btn2").click(function(){ 
+            $("#test").toggle()
+        })
+
+        $("#btn3").click(function() { 
+            $("#test2").text("ESSAI") // correspond à innerText
+           // $("#test2").html("<b>ESSAI</b>")  // correspond à innerHTML
+
+            //   $("#test2").html("<trong>ESSAI</strong>")
+        })
+
+        $("#inp1").keyup(function() { // à chaque touche relachée
+            
+            let valeur = $(this).val()  //je recupère la saisie dans input
+                                        // correspond à this.value du js
+
+
+            $("#test2").html("<strong>"+valeur+"</strong>") 
+            // je met à jour le contenu de #test2 en html
+            // correspond à innerHTML
+        })
+
+        
+
+    });    
+    </script>
+</body>
+</html>

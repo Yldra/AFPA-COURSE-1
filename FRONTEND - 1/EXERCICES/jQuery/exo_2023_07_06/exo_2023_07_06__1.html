@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <title>Exercice</title>
+    <style type="text/css">
+        .vert {
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="laclasse rouge">la classe à Daoulas</div>
+    <footer class="laclasse">le pied</footer>
+
+    <button id="un">passe au vert</button>
+    <button id="deux">supprime le vert</button>
+
+    <script>
+
+
+        // JS. querySelector . querySelectorAll .
+        // Quand je clique sur le bouton "un", j'ajoute la classe .vert à tous les éléments
+        // de la classe laclasse.
+        // querySelector ramène la référence sur l'élément. ici-> button#un.
+        // querySelectorAll ramène la référence sur un tableau d'éléments.
+        // document.querySelector('button#un').addEventListener('click', function () {
+        //     let tab = document.querySelectorAll('.laclasse')
+        //     tab.forEach(function (element) {
+        //         element.classList.add('vert')
+        //     })
+        // })
+        // // (Raisonnement : on ajoute la classe "vert" dans le HTML aux balises qui ont déjà 
+        // // la classe "laclasse". Ce qui aura pour conséquence d'appliquer à ces balises
+        // // le style vert défini préalablement dans le CSS.
+
+        // // [Remarque : réfléchir en pensant : Sélection > Evènement > Action. C'est le 
+        // // principe de Javascript.]
+
+        // document.querySelector('button#deux').addEventListener('click', function () {
+        //     let tab = document.querySelectorAll('.laclasse')
+        //     tab.forEach(function (element) {
+        //         element.classList.remove('vert')
+        //     })
+        // })
+
+        // Même chose en jQuery :
+        $('button#un').click(function() {
+            $(".laclasse").addClass('vert');
+        })
+
+        $('button#deux').click(function() {
+            $(".laclasse").removeClass('vert');
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>

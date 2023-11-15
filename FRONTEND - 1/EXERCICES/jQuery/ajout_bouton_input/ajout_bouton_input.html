@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <title>Ajout bouton input en jQuery</title>
+</head>
+<body>
+    <div id="form1">
+        <!-- <input id=champ0 value=champ0> -->
+    </div>
+    <button>Ajouter</button>
+
+    <script>
+
+        let compteurId = 1;
+
+        $('button').click(function(){
+            $("div").append('<input id=champ' + compteurId + ' value=champ' + compteurId + '>')
+            compteurId++
+        })
+
+       $("div#form1").on("focus","input",function(){
+            console.log( $(this).val())
+       })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="toto"></div>
+    <script>
+      $(document).ready(function () {
+        // créa elt "section" et attr de "id" sur "test"
+        var test = $("<section></section>").attr("id", "test");
+
+        // créa elt "ul"
+        // append ajoute l'elt à "section" ( déclaré en test )
+        var ul = $("<ul></ul>");
+        test.append(ul);
+
+        // créa elt "li" et .text permet d'ajouter le texte,
+        // on ajoute les elts à "ul"
+        var li1 = $("<li></li>").text("item1");
+        ul.append(li1);
+        var li2 = $("<li></li>").text("item2");
+        ul.append(li2);
+
+        // sélectionne l'elt "body" et ajoute l'elt "section"
+        $("body").append(test);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+<div id="toto"></div>
+<script>
+
+// var test=document.createElement('section');
+// test.setAttribute('id','test');
+
+// var ul=document.createElement('ul');
+
+// document.body.appendChild(test);
+// test.appendChild(ul);
+
+// var li=document.createElement('li');
+// ul.appendChild(li);
+// li.innerHTML="item1"
+// var li=document.createElement('li');
+// ul.appendChild(li);
+// li.innerHTML="item2"
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Création d'une variable conteneur, à laquelle on affecte ce qui suit : Sélection du body,
+        // dans lequel on crée une section, à laquelle on attribue l'id 'test', et dans laquelle on crée un <ul>
+        $('body').append($('<section>').attr('id','test').append($('<ul>')));
+        // Sélection de la balise <ul>, dans laquelle on crée une <li>, dans laquelle on met le texte 'item1'
+        $('ul').append($('<li>').text('item1'));
+        // Même chose, mais avec un texte différent : 'item2'
+        $('ul').append($('<li>').text('item2'));
+    })
+
+</script>
+
+</body>
+</html>

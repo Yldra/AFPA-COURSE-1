@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function tri_bulle(T) {
+        var ef = true
+        while (ef == true) {
+            ef = false ;
+            for (var j = 0; j < T.length ; j++) {
+            if (T[j] > T[j + 1]) {
+                var temp = T[j]
+
+                T[j] = T[j + 1]
+                T[j + 1] = temp
+                ef = true
+            }
+            }
+        }
+        }
+
+var arr = [5, 4, 3, 2, 1];
+tri_bulle(arr);
+
+console.log(arr);
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

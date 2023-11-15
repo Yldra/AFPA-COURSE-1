@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+
+      border-radius: 0 3px 3px 0;
+
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="slideshow-container">
+
+    <div class="mySlides">
+      <img src="img_nature_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="img_snow_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="img_mountains_wide.jpg" style="width:100%">
+    </div>
+
+
+
+
+    <a class="prev" id="p">&#10094;</a>
+    <a class="next" id="n">&#10095;</a>
+
+  </div>
+
+  <br>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    // SELECTION
+    // getElementsByClassName me ramène un HTMLCollection
+    let lesimages = document.getElementsByClassName("mySlides")
+    // Je passe la 1ère image en display = "block" :
+    lesimages[0].style.display = "block"
+      
+    let indice = 0;
+    
+
+    function efface() {
+      for (let i = 0; i < lesimages.length; i++) {
+        lesimages[i].style.display = "none"
+      }
+    }
+
+    function avance() {
+      indice++
+      console.log(indice)
+      if (indice > lesimages.length-1) {indice = 0}
+      montreSlide(indice)
+    }
+
+    function recule() {
+      indice--
+      console.log(indice)
+      if (indice < 0) {indice = lesimages.length - 1}
+      montreSlide(indice)
+    }
+
+    function montreSlide(ind) {
+      efface()
+      lesimages[ind].style.display = "block"
+    }
+
+    document.getElementById('n').addEventListener("click", avance)
+    document.getElementById('p').addEventListener("click", recule)
+
+    // setInterval(avance, 3000) // setInterval exécute une fonction toutes les x millisecondes (ici, 3000 ms)
+
+    // En fonction de l'évènement mouseover sur l'image, stopper setInterval.
+    // La fonction pour stopper setInterval est clearInterval.
+    // En fonction de l'évènement mouseout, relancer le setInterval.
+
+    // Exécuter le même diaporama (slider) en jQuery
+
+    // $(".mySlides").hide()"
+    // $("#n").click(avance)
+    // $("#p").click(recule)
+
+    let interval 
+ 
+    // $(".mySlides").on({
+    //   mouseover: function () {
+    //     $(this).lanceinterval();
+    //   },
+    //   mouseout: function () {
+    //     $(this).stopinterval();
+    //   }
+      
+      
+    // lesimages[indice].addEventListener("mouseover", lanceinterval)
+    
+    // lesimages[indice].addEventListener("mouseout", stopinterval)
+    
+    let container = document.getElementsByClassName("slideshow-container")
+    container[0].addEventListener("mouseover", lanceinterval)
+    container[0].addEventListener("mouseout", stopinterval)
+    
+    function lanceinterval() {
+      console.log("mouseover")
+      console.log("mouseover" + indice)
+      console.log("mouseover" + lesimages[indice])
+      interval = setInterval(avance, 1000)  // setInterval execute une fonction toutes les x (ici 1000) millisecondes.
+    }
+
+    function stopinterval() {
+      clearInterval(interval)
+      console.log("mouseout")
+      console.log("mouseout" + indice)
+      console.log("mouseout" + lesimages[indice])
+    }
+
+  })
+
+
+            // MES ESSAIS
+            // let i = 0
+            
+            // $("#n").click(function() {
+            //   // console.log(i)
+            //   i = i + 1
+            //   if (i > 2) {
+            //     i = 0
+            //   }
+            //   console.log(i)
+              
+            //   for (i = 0 ; i < 3 ; i) {
+            //     lesimages[i].style.display = "block"
+            //     if (i=1) {
+            //     lesimages[0].style.display = "block"
+            //     lesimages[2].style.display = "block"
+            //   } else if (i = 2) {
+            //     lesimages[0].style.display = "block"
+            //     lesimages[1].style.display = "block"
+            //   } else if (i = 0) {
+            //     lesimages[1].style.display = "block"
+            //     lesimages[2].style.display = "block"
+            //   } else {
+            //     console.log("Perdu : essaye encore.")
+            //   }
+            //   }
+
+            //   // if (i=1) {
+            //   //   lesimages[0].style.display = "block"
+            //   //   lesimages[2].style.display = "block"
+            //   // } else if (i = 2) {
+            //   //   lesimages[0].style.display = "block"
+            //   //   lesimages[1].style.display = "block"
+            //   // } else if (i = 0) {
+            //   //   lesimages[1].style.display = "block"
+            //   //   lesimages[2].style.display = "block"
+            //   // } else {
+            //   //   console.log("Perdu : essaye encore.")
+            //   // }
+
+            //   // lesimages[i].style.display = "block"
+
+            //   // lesimages[!i].style.display = "none"
+            
+            
+
+            //   // for (let i = 2; i >= 0; i--)
+            //   //   // (lesimages.style.display = "none")
+            //   //   lesimages[i].style.display = "block"
+            // })
+
+
+ 
+
+</script>
+
+</body>
+
+</html>

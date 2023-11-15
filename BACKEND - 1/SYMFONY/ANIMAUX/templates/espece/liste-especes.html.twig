@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LISTE ESPÈCES{% endblock %}
+
+{% block body %}
+<style>
+    p { font-size : 20px}
+</style>
+
+<div class="container text-center mt-5">
+    <h1>LISTE DES ESPÈCES</h1>
+    <br>
+    <a href="{{ path('crea_espece') }}">
+    <button type="submit" class="btn btn-primary btn-sm">Créer</button></a>
+    <br> 
+
+{% for espece in especes %}
+<hr>
+<div style="display: flex; align-items: center; justify-content: center; height: 10vh;"> <!-- Center both vertically and horizontally -->
+    <a href="{{ path('modif_espece', {'id': espece.id}) }}" style="margin-right: 10px;"> <!-- Add margin for spacing -->
+        <button type="submit" class="btn btn-primary btn-sm">Modifier</button>
+    </a>
+    
+    <a href="{{ path('suppr_espece', {'id': espece.id}) }}" style="margin-right: 10px;"> <!-- Add margin for spacing -->
+        <button type="submit" class="btn btn-primary btn-sm">Supprimer</button>
+    </a>
+    
+    <a href="{{ path('app_espece', {'id': espece.id}) }}">
+        <h2>{{ espece.nom }}</h2>
+    </a>
+</div>
+{% endfor %}
+
+
+</div>
+{% endblock %}

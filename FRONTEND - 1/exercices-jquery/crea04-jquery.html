@@ -1,0 +1,60 @@
+<html>
+<head>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+<div id="toto"></div>
+<script>
+//-------------------------------------------------------------------
+// Introduction aux tableaux
+// Le tableau JavaScript est un objet qui représente une collection 
+// de types d’éléments similaires
+//-------------------------------------------------------------------
+
+var datas=["item un","item deux","item trois"]; 
+
+// var test=document.createElement('section');
+// test.setAttribute('id','test');
+
+// var ul=document.createElement('ul');
+
+// document.body.appendChild(test);
+// test.appendChild(ul);
+
+// var i = 0;
+// for (i = 0 ; i < datas.length ; i++) {
+//     var li=document.createElement('li');
+//     ul.appendChild(li);
+//     li.innerHTML=datas[i];
+// }
+
+/*
+datas.forEach( function(item) {
+    var li=document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML=item;
+})
+*/
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Création d'une section dans le body,
+        // puis on donne l'id 'test' à cette section,
+        // puis on crée une balise <ul> dans la section
+        $('body').append('<section>')
+        $('section').attr('id','test')
+        $('section').append('<ul>');
+
+        // Création d'une variable ul qui sert à sélectionner la balise <ul>
+        let ul = $('section#test ul');
+        // boucle pour créer des <li> avec le texte contenu dans le tableau datas
+        $.each(datas, function(index, valeur) {
+            ul.append($('<li>').text(valeur));
+        })
+
+    })
+
+</script>
+</body>
+</html>

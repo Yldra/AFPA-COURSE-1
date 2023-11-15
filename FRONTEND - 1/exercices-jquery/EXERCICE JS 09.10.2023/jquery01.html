@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="toto"></div>
+    <script>
+      $(document).ready(function () {
+        // Création d'un élément <p>
+        var newP = $("<p>contenu</p>");
+
+
+        // Référence à l'élément #toto
+        var maDiv = $("#toto");
+
+        // Ajout de l'élément <p> à maDiv
+        maDiv.append(newP);
+
+        // Changement de la couleur du texte de maDiv en rouge
+        maDiv.css("color", "red");
+
+        // Création d'un élément <a>
+        var monA = $("<a></a>");
+
+        // Ajout de l'attribut href à monA
+        monA.attr("href", "http://example.com");
+
+        // Ajout de l'attribut title à monA
+        monA.attr("title", "Exemple");
+
+        // Ajout du texte à monA
+        monA.text("Le site example.com");
+
+        // Ajout de monA à maDiv
+        maDiv.append(monA);
+      });
+    </script>
+  </body>
+</html>

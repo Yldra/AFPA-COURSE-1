@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .container {
+        width:1000px; 
+        display: flex;
+        background-color: aqua;
+      }
+      .item {
+       /* width: 100px;*/
+       height:100px;
+        background-color: brown;
+        border-radius: 5px;
+        color: white;
+        border:1px solid white;
+      }
+
+      .item:nth-child(1) {
+        flex-basis: 200px; /* prend le dessus sur la width */
+      }
+
+      .item:nth-child(2) {
+        /* si je fais un flex-grow de x il va prendre tout le reste 
+        que mette 1 ou 50 */
+        flex-grow:1; 
+      }
+
+      .item:nth-child(3) {
+        /* si je fais un flex-grow de x il va prendre tout le reste 
+        que je mette 1 ou 50 
+        
+        flex-grow reparti l'espace restant. 
+        */
+        
+        flex-grow:2; 
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">22</div>
+      <div class="item">3</div>
+    </div>
+  </body>
+</html>

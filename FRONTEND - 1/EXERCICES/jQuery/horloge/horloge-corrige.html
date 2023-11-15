@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8" >
+<title>Horloge</title>
+<style>
+
+/* Positions des chiffres sur le cadran*/
+ 	#chiffre12{position: absolute; top: 100px; left: 200px}
+	#chiffre11{position: absolute; top: 113px; left: 150px}
+	#chiffre10{position: absolute; top: 150px; left: 113px}
+	#chiffre9 {position: absolute; top: 200px; left: 100px}
+	#chiffre8 {position: absolute; top: 250px; left: 113px}
+	#chiffre7 {position: absolute; top: 287px; left: 150px}
+	#chiffre6 {position: absolute; top: 300px; left: 200px}
+	#chiffre5 {position: absolute; top: 287px; left: 250px}
+	#chiffre4 {position: absolute; top: 250px; left: 287px}
+	#chiffre3 {position: absolute; top: 200px; left: 300px}
+	#chiffre2 {position: absolute; top: 150px; left: 287px}
+	#chiffre1 {position: absolute; top: 113px; left: 250px}
+/* Position du rond central*/
+	#centre {position: absolute; top: 200px; left: 200px; font-family: arial}
+	
+/* Positions initiales des aiguilles */
+	#aiguilleheure {position: absolute; top: 110px; left: 200px}
+	#aiguilleminute {position: absolute; top: 110px; left: 200px}
+ 
+</style>
+
+<script>
+
+	var compteur_minutes=0;
+	var compteur_heures=0;
+		
+	function tourne()
+		{
+			heures=document.getElementById("aiguilleheure");
+			minutes=document.getElementById("aiguilleminute");
+
+			switch (compteur_minutes)
+				{
+					case 0: minutes.style.top="123px";minutes.style.left="250px"; break;
+					case 1: minutes.style.top="160px";minutes.style.left="287px";break;
+					case 2: minutes.style.top="210px";minutes.style.left="300px";break;
+					case 3: minutes.style.top="260px";minutes.style.left="287px";break;
+					case 4: minutes.style.top="297px";minutes.style.left="250px";break;
+					case 5: minutes.style.top="310px";minutes.style.left="200px";break;
+					case 6: minutes.style.top="297px";minutes.style.left="150px";break;
+					case 7: minutes.style.top="260px";minutes.style.left="113px";break;
+					case 8: minutes.style.top="210px";minutes.style.left="100px";break;
+					case 9: minutes.style.top="160px";minutes.style.left="113px";break;
+					case 10: minutes.style.top="123px";minutes.style.left="150px";break;
+					case 11: minutes.style.top="110px";minutes.style.left="200px";break
+					default: alert("Y'a un bug!"); break;
+				}
+				
+			compteur_minutes=(compteur_minutes+1) % 12;
+			console.log("cm:"+compteur_minutes % 12);
+			 
+			if (compteur_minutes == 0)
+				{
+					switch (compteur_heures)
+						{
+							case 0: heures.style.top="123px";heures.style.left="250px"; break;
+							case 1: heures.style.top="160px";heures.style.left="287px";break;
+							case 2: heures.style.top="210px";heures.style.left="300px";break;
+							case 3: heures.style.top="260px";heures.style.left="287px";break;
+							case 4: heures.style.top="297px";heures.style.left="250px";break;
+							case 5: heures.style.top="310px";heures.style.left="200px";break;
+							case 6: heures.style.top="297px";heures.style.left="150px";break;
+							case 7: heures.style.top="260px";heures.style.left="113px";break;
+							case 8: heures.style.top="210px";heures.style.left="100px";break;
+							case 9: heures.style.top="160px";heures.style.left="113px";break;
+							case 10: heures.style.top="123px";heures.style.left="150px";break;
+							case 11: heures.style.top="110px";heures.style.left="200px";break
+							default: alert("Y'a un bug!"); break;
+						}
+				
+					compteur_heures=(compteur_heures + 1) % 12;
+					console.log("ch"+compteur_heures);
+				}
+		} // fin tourne()
+let la ;
+let tourn=false ;
+		 function lance() {
+			if(tourn == false){
+		 		la = window.setInterval("tourne()", 1000 )
+				 tourn=true;
+			}
+		 }
+		 function stop() {
+			 tourn=false;
+			 clearInterval(la)
+		 }
+	
+</script>
+
+</head>
+<body>
+
+<p>Une petite horloge... <input type="button" value="Lancer!" onclick="lance()"><input type="button" value="Arrêter!" onclick="stop()"></p>
+<div id="chiffre1"><p>1</p></div>
+<div id="chiffre2"><p>2</p></div>
+<div id="chiffre3"><p>3</p></div>
+<div id="chiffre4"><p>4</p></div>
+<div id="chiffre5"><p>5</p></div>
+<div id="chiffre6"><p>6</p></div>
+<div id="chiffre7"><p>7</p></div>
+<div id="chiffre8"><p>8</p></div>
+<div id="chiffre9"><p>9</p></div>
+<div id="chiffre10"><p>10</p></div>
+<div id="chiffre11"><p>11</p></div>
+<div id="chiffre12"><p>12</p></div>
+<div id="centre"><p>o</p></div>
+
+<div><img alt="heures" src="rondbleu.png" height="21" id="aiguilleheure" width="21"></div>
+<div><img alt="minutes" src="rondrouge.png" height="21" id="aiguilleminute" width="21"></div>
+
+</body>
+</html>

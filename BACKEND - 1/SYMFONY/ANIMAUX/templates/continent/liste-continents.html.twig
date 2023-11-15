@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LISTE CONTINENTS{% endblock %}
+
+{% block body %}
+<style>
+    p { font-size : 20px}
+</style>
+
+<div class="container text-center mt-5">
+    <h1>LISTE DES CONTINENTS</h1>
+        {% for continent in continents %}
+        <hr>
+        <a href="{{ path('app_continent', {'id': continent.id}) }}">
+            <h2>{{ continent.nom }}</h2></a>
+        <hr>
+        {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <img id="image1"></img>
+   
+
+    <script>
+        
+        // Même chose que exemple jqimage, mais en rajoutant un timer de 3 secondes avant l'affichage de l'image.
+        $(document).ready(function() {
+            setTimeout(function() { $("#image1").attr('src', "http://via.placeholder.com/350")}, 3000 )
+                
+            })
+    
+
+    </script>
+</body>
+</html>

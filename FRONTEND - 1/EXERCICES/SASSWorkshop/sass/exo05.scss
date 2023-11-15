@@ -1,0 +1,27 @@
+
+/*  %message-shared est étendu */
+%message-partaged {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+.message {
+  @extend %message-partaged; 
+}
+.success {
+  @extend %message-partaged;
+  border-color: green; 
+}
+.error {
+  @extend %message-partaged;
+  border-color: red;
+}
+.warning {
+  @extend %message-partaged;
+  border-color: yellow;
+}

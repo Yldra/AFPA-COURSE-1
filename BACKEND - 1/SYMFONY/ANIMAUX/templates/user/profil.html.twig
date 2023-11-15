@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PROFIL UTILISATEUR{% endblock %}
+
+{% block stylesheets %}
+<style>
+    h2, h3, h4 {
+        text-decoration: underline;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .profile-container {
+        text-align: center;
+        padding: 30px;
+        background-color: #f7f7f7;
+        border-radius: 10px;
+    }
+
+    .profile-image {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .profile-details {
+        margin-top: 20px;
+    }
+
+    .profile-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .profile-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container profile-container mt-5">
+    {% if app.user %}
+    <h1 class="text-uppercase">PROFIL UTILISATEUR</h1>
+    <br>
+    
+    {% if app.user.photo is not null %}
+        <img class="profile-image img-thumbnail rounded-square" src="{{ asset('pictures/' ~ app.user.photo) }}" 
+            alt="{{ app.user.prenom }} {{ app.user.nom }}">
+    {% else %}
+        <img class="profile-image img-thumbnail rounded-square" src="{{ asset('placeholder.png') }}" 
+            alt="{{ app.user.prenom }} {{ app.user.nom }}">
+    {% endif %}
+
+    <div class="profile-details">
+        <h3>Civilité :</h3>
+        <p>{{ app.user.civilite }}</p>
+        <h3>Identité :</h3>
+        <p>{{ app.user.prenom }} {{ app.user.nom }}</p>
+        <h3>Age :</h3>
+        <p>{{ app.user.age }}</p>
+        <h3>Téléphone :</h3>
+        <p>{{ app.user.telephone }}</p>
+        <h3>Email :</h3>
+        <p>{{ app.user.email }}
+        <button class="button">Modifier E-Mail</button>
+        </p>
+
+    </div>
+    {% endif %}
+    
+    {% if not app.user %}
+    <h2>Vous pouvez nous rejoindre ici : <a href="{{ path('app_inscription') }}">Inscription</a></h2>
+    {% endif %}
+</div>
+{% endblock %}

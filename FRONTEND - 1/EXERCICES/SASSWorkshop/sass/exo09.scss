@@ -1,0 +1,11 @@
+
+@mixin prefixe($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+.gray {
+  @include prefixe(filter, grayscale(50%), moz webkit yoyo dede);
+}

@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+
+div {
+    display: inline-block;
+    border: 0px solid black;
+    width: 40%;
+}
+
+.colonne_1 {
+    background-color: lightblue;
+    width: 50%;
+}
+
+.colonne_2 {
+    background-color: lightcoral;
+    /* width: 50%;
+    float: left; */
+}

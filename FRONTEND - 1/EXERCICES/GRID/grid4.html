@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body {
+    padding-top: 20px;
+    background: #f5f7f8;
+  }
+  
+  .grid-1 {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    
+  /*  grid-template-columns: 1fr; /* je crée une colonne sur toute la largeur */
+    grid-template-rows: 80px auto auto 80px; /* je cré 4 rangées dont 2 fixes */
+    grid-gap: 10px;   
+    
+    grid-template-areas: "header"
+                         "main"
+                         "sidebar"
+                         "footer";  /* consécutivement je nomme les aires et j'affiche verticalement */
+  }
+  
+  /* items */
+  
+  .grid-1 div {
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    }
+  
+  
+  /* specific item styles */
+  
+  .item-1 {
+    background: #b03532;
+    grid-area: header;
+  }
+  .item-2 {
+    background: #33a8a5;
+    grid-area: main;
+    
+  }
+  
+  /* rwd */
+  
+  /* quand la résolution est au dessus de 600px */
+  @media only screen and (min-width: 600px) {
+  
+  .grid-1 {
+    /*max-width: 800px;*/
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 80px auto 80px;
+    grid-gap: 20px;
+    /* les zones doinvent être contigus */
+    grid-template-areas: "header   header   header header"
+                         "sidebar  sidebar     main main"
+                         "sidebar sidebar main main"
+                         "footer footer footer footer";
+
+    /* 
+    tester avec et sans max-width.
+    tester avec 
+            grid-template-areas: "header   header   header"
+                         "sidebar  main     main"
+                         "sidebar  footer   footer"; */
+    
+    }
+    
+
+  .grid-1 div {
+    color:#bde03f;
+    font-size: 20px;
+    padding: 20px;
+   }
+
+} /* fin mediaQ */
+
+  /* fin media-queries */
+
+  .item-3 {
+    background: #30997a;
+    grid-area: sidebar;
+  }
+
+  .item-4 {
+    background: #6a478f;
+    grid-area: footer;
+  }
+
+  .item-5 {
+    background: #da6f2b;
+    grid-area: header2;
+  }
+ 
+</style>
+
+<section class="grid-1">
+
+  <div class="item-1">1 header</div>
+  
+  <div class="item-2"> 2 main</div>
+  
+  <div class="item-3">3 aside</div>
+  
+  <div class="item-4">4 footer</div>
+
+</section>
+<body>
+    
+</body>
+</html>

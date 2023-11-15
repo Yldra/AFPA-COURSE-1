@@ -1,0 +1,557 @@
+/* STYLES GENERAUX */
+
+@font-face {
+	font-family: 'big noodle titling';
+	src: url("fonts/big_noodle_titling.ttf") format("truetype");
+}
+
+* 
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Big Noodle Titling', sans-serif;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+body 
+{   
+    background:black;
+}
+
+p
+{
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+a
+{
+    text-decoration: none;
+    color: #000;
+}
+
+/*
+div {
+    font-size: 30px;
+    margin-bottom: 80px;
+}
+
+h1 {
+    font-size: 36px;
+    color: black;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    font-family: 'Big Noodle Titling';
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 36px;
+    text-shadow: 1px 4px 1px #4A4C4E;
+    margin-left:50px;
+    margin-bottom:10px;
+}*/
+
+/* HEADER ET FOOTER */
+
+header, footer
+{
+    width: 100%;
+    background:white;
+    box-shadow: 0px 0px 15px #333;
+}
+
+header
+{
+    border-bottom: 2px solid #fff;
+    height: 275px;
+    padding-bottom: 100px;
+}
+
+header h1
+{
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    width: 90%;
+    margin: 0 auto;
+}
+
+footer
+{   
+    padding: 20px 0px;
+    border-top: 2px solid #fff;
+    background: black;
+}
+
+footer p
+{
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+
+footer a 
+{
+    color: #fff;
+}
+
+#copyright 
+{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    text-transform: capitalize;
+    font-style: oblique;
+    color: white;
+}
+
+#copyright:hover 
+{
+    color: orange;
+    font-size: 20px;
+}
+
+/* SECTIONS */
+
+section
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+    margin: 10px auto;
+    box-shadow: 0 0 10px #777;
+    background-color: #fff;
+}
+
+section h2
+{
+    margin: 20px 0;
+    width: 90%;
+}
+
+section > div
+{
+    width:90%;
+}
+
+/* SECTION PHOTO ET CONTACT */
+.photo
+{
+    text-align: center;
+}
+
+.photo img
+{
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    box-shadow: 0 0 10px #777;
+    border-radius: 50%;
+    margin-top: 100px;
+}
+
+.bio
+{
+    border-bottom: 2px solid black;
+}
+
+.bio a
+{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto 30px auto;
+    color: #fff;
+    background-color: black;
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.bio a:hover 
+{
+    background-color: #EA0;
+}
+
+.contact-flex
+{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.contact-flex p:first-child
+{
+    flex: 0 0 40%;
+}
+
+.contact-flex p:last-child
+{
+    flex:0 0 60%;
+}
+
+/* SECTION NETWORK */
+
+.network
+{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto 0px auto;
+}
+
+.network i
+{
+    width: 40px;
+    height: 40px;
+}
+  
+.fa-twitter:hover 
+{
+    color: #00acee;
+}
+  
+.fa-gradient:hover 
+{
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  
+.fa-twitch:hover 
+{
+    color:#6441A4;
+}
+  
+.fa-youtube:hover 
+{
+    color: #FF0000;
+}
+  
+.fa-linkedin:hover 
+{
+    color: #0A66C2;
+}
+  
+.fa-facebook:hover 
+{
+    color: #3b5998;
+}
+  
+.fa-discord:hover 
+{
+    color:#7289DA;
+}
+  
+.fa-brands 
+{
+    font-size: 2em;
+    margin-left:30px;
+}
+
+/* SECTION EXPERIENCES */
+
+.exp
+{
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.exp-info
+{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.exp-logo
+{
+    flex:0 0 25%;
+    max-width: 100px;
+}
+
+.exp-info
+{
+    flex: 0 0 70%;
+    margin-left: auto;
+}
+
+.exp img
+{
+    width: 100%;
+}
+
+.exp h3
+{
+    font-size: 1.2em;
+}
+
+.exp h4
+{
+    font-size: 1em;
+    font-weight: normal;
+}
+
+/* SECTION COMPETENCES */
+
+.comp
+{
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 10px;
+}
+
+.comp p
+{
+    flex:0 0 40%;
+}
+
+.comp2
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.conteneur-barre2
+{
+    flex: 0 0 100%;
+    height: 0.5em;
+    margin-bottom: 0.25em;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+/* BARRES COLOR + % */
+
+.conteneur-barre
+{
+    flex:0 0 60%;
+    border-radius: 5px;
+    background-color: grey;
+    border-bottom: 1px ridge grey;
+}
+
+.barre
+{
+    display: block;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.c50
+{
+    width: 50%;
+    background-color: orangered;
+}
+
+.c55
+{
+    width: 55%;
+    background-color: orangered;
+}
+
+.c60
+{
+    width: 60%;
+    background-color: orangered;
+}
+
+.c65
+{
+    width: 65%;
+    background-color: orangered;
+}
+
+.c70
+{
+    width: 70%;
+    background-color: orange;
+}
+
+.c75
+{
+    width: 75%;
+    background-color: orange;
+}
+
+.c80
+{
+    width: 80%;
+    background-color: orange;
+}
+
+.c85
+{
+    width: 85%;
+    background-color: orange;
+}
+
+.c90
+{
+    width: 90%;
+    background-color: green;
+}
+
+.c95
+{
+    width: 95%;
+    background-color: green;
+}
+
+.c100
+{
+    width: 100%;
+    border-radius: 5px;
+    background-color: green;
+}
+
+/* Structure du Menu de Navigation "Hamburger" */
+
+nav 
+{   
+    background: /*#FA9C1D;*/ black;
+    font-family: 'Big Noodle Titling';
+    box-shadow: 0 0 10px #777;
+}
+
+nav .menu 
+{   
+
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .menu a 
+{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-shadow: 1px 4px 1px #4A4C4E;
+    color: white;
+    width: 20%;
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a:hover 
+{
+    background:#4A4C4E;
+    font-size: 40px;
+}
+
+/* Label responsive : <input class="checkbox" id="cocher"> et <label for="cocher">☰</label> */
+
+label
+{
+    display: none;
+}
+ 
+@media all and (max-width: 991px)
+{   
+    nav
+    {   
+        height: 60px;
+    }
+ 
+    nav .menu
+    {
+        display: none;
+    }
+    
+    nav .menu a 
+    {
+        width: auto;
+    }
+ 
+    label 
+    {
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+label, #cocher
+{
+    display: none;
+}
+ 
+@media all and (max-width: 991px)
+{
+    nav
+    {
+        background-color: /*#FA9C1D;*/black;
+        height: 60px;
+    }
+ 
+    nav .menu
+    {   
+        display: none;
+        flex-direction: column;
+        background: /*#FA9C1D;*/black;
+        height: 220px;
+        width: 100%;
+    }
+ 
+    nav .menu a {
+        width: 100%;
+    }
+ 
+    label 
+    {
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+
+    #cocher:checked + .menu {
+        display: flex;
+    }
+
+    nav a:hover 
+{
+    background: #4A4C4E;
+    font-size: 50px;
+    width:100%;
+}
+}
+
+/* SECTION CENTRES D'INTERET */
+
+.interet 
+{
+    flex:0 1 24%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.interet img
+{
+    border: 2px solid black;
+    width: 80px;
+    height: 80px;
+    box-shadow: 0 0 15px #000000;
+}

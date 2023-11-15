@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        p {
+            margin: 8px;
+            font-size: 16px;
+        }
+
+        .rouge {
+            color: red;
+        }
+
+        .jaune {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <p>JAVA</p>
+    <p>PYTHON</p>
+    <p>JAVASCRIPT</p>
+    <button>GO</button>
+</body>
+<script>
+    // Faire les exercices suivants en utilisant jQuery (puis faire la même chose en JS "pur")
+    
+    function go(){
+    // Ajouter la classe .w3r_font_color au dernier paragraphe :
+    $('p:last').addClass("rouge");
+
+    // Ajouter la classe .w3r_font_color au 2ème paragraphe :
+    $('p:nth-child(2)').addClass("rouge");
+
+    // Ajouter la classe .w3r_background à tous les éléments <p> :
+    $('p').addClass("jaune");
+
+    // Appliquer CSS sur le dernier <p>
+    $('p:last').css('font-size','30px');
+    }   
+
+    $('button').click(go)
+</script>
+
+</html>

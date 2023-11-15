@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="toto"></div>
+    <script>
+      $(document).ready(function () {
+        let $input = $("input");
+
+        $input.focus(function () {
+          console.log("J'entre dans le champ nom");
+        });
+
+        $input.blur(function () {
+          console.log("Je sors");
+        });
+      });
+    </script>
+  </body>
+</html>

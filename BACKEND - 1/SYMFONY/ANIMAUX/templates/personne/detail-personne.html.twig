@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FICHE PERSONNE{% endblock %}
+
+{% block body %}
+<style>
+h2,h3,h4 {
+    text-decoration: underline;
+}
+p { 
+    font-size: 30px;
+}
+</style>
+
+<div class="container text-center mt-5" style="width: 25%;">
+
+        {% if previousPersonne %}
+        <a href="{{ path('personne', {'id': previousPersonne.id}) }}">
+        <button type="submit" class="btn btn-primary btn-sm">Précédent</button></a>
+    {% endif %}
+
+        {% if nextPersonne %}
+        <a href="{{ path('personne', {'id': nextPersonne.id}) }}">
+        <button type="submit" class="btn btn-primary btn-sm">Suivant</button></a>
+    {% endif %}
+
+        <p><a href="{{ path('modif_personne', {'id': personne.id}) }}">
+    <button type="submit" class="btn btn-primary btn-sm">Modifier</button>
+    </a></p>
+    
+    <p><a href="{{ path('suppr_personne', {'id': personne.id}) }}">
+    <button type="submit" class="btn btn-primary btn-sm">Supprimer</button>
+    </a></p>
+
+
+    <p>{{ personne.prenom }} {{ personne.nom }}</p>
+    <img class="img-thumbnail rounded-square" src="{{ asset('pictures/' ~ personne.photo) }}" 
+    alt="{{ personne.prenom }} {{ personne.nom }}" height="300px" width="400px">
+
+    {% for p in personne.possedes %}
+    <li class="list-group-item">{{ p.animal.nom }}</li>
+    <li class="list-group-item">{{ p.nombre }}</li>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

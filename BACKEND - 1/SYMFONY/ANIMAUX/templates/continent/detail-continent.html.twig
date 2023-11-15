@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LISTE ANIMAUX-CONTINENT{% endblock %}
+
+{% block body %}
+<style>
+h2,h3,h4 {
+    text-decoration: underline;
+}
+p { 
+    font-size: 30px;
+}
+</style>
+
+
+<div class="container text-center mt-5" style="width: 25%;">
+{# {{ dump(continent) }} #}
+<br>
+        {% if previousContinent %}
+        <a href="{{ path('app_continent', {'id': previousContinent.id}) }}">
+        <button type="submit" class="btn btn-primary">Précédent</button></a>
+    {% endif %}
+
+        {% if nextContinent %}
+        <a href="{{ path('app_continent', {'id': nextContinent.id}) }}">
+        <button type="submit" class="btn btn-primary">Suivant</button></a>
+    {% endif %}
+    <br><hr>
+    <figure>
+    <img class="img-thumbnail rounded-square" src="{{ asset('pictures/' ~ continent.image) }}" alt="{{ continent.nom }}" height="400px" width="400px">
+    <figcaption>{{ continent.nom }}</figcaption>
+    </figure>
+    <p> {{ continent.description }} <p>
+    <br><hr>
+        <h1>Liste des Animaux en {{ continent.nom }}</h1>
+    <br>
+    {% for animal in animaux %}
+    <hr>
+    <h1>{{ animal.nom }}</h1>
+    <img class="img-thumbnail rounded-square" src="{{ asset('pictures/' ~ animal.image) }}" alt="{{ animal.nom }}" height="300px" width="400px">
+    <h3>Bio :</h3>
+    <p>{{ animal.description }}
+    <h3>Nom Latin :</h3>
+    <p>{{ animal.nomLatin }}</p>
+    <h3>Espèce :</h3>
+    <p>{{ animal.espece.nom }}</p>
+    {% endfor %}
+
+</div>
+{% endblock %}

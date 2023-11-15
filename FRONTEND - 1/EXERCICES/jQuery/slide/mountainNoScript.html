@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0
+    }
+
+    .mySlides {
+      display: block
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+
+      border-radius: 0 3px 3px 0;
+
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="slideshow-container">
+
+    <div class="mySlides">
+      <img src="img_nature_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="img_snow_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="img_mountains_wide.jpg" style="width:100%">
+    </div>
+
+
+
+
+    <a class="prev" id="p">&#10094;</a>
+    <a class="next" id="n">&#10095;</a>
+
+  </div>
+
+  <br>
+
+<script>
+
+  $(document).ready(function() {
+    
+    let tab = document.getElementsByClassName("mySlides");
+    console.log(tab)
+
+    // let tab0 = document.getElementById("mySlides:first-child");
+    // console.log(tab0)
+
+    // $(tab0).hide();
+
+    // $(".mySlides:nth-child(2)").hide();
+    // $(".mySlides:nth-child(3)").hide();
+
+
+    // let img0 = $(".mySlides:nth-child(1)")
+    // let img1 = $(".mySlides:nth-child(2)")
+    // let img2 = $(".mySlides:nth-child(3)")
+
+    // console.log(tab[0])
+
+    // $(img1).hide();
+    // $(img2).hide();
+
+    $(tab[0]).show()
+    $(tab[1]).hide()
+    $(tab[2]).hide()
+
+    // $("#p").click(function() {
+    //   console.log("Clic gauche")
+    //   if($(tab[0]).show() == true) {
+    //     $(tab[0]).hide()
+    //     $(tab[1]).hide()
+    //     $(tab[2]).show()
+    //   } else if($(tab[1]).show() == true) {
+    //     $(tab[0]).show()
+    //     $(tab[1]).hide()
+    //     $(tab[2]).hide()
+    //   } else if($(tab[2]).show() == true) {
+    //     $(tab[0]).hide()
+    //     $(tab[1]).show()
+    //     $(tab[2]).hide()
+    //   } else {
+    //     console.log("Il y a un truc qui déconne.")
+    //   }      
+    // })
+
+    $("#p").click(function() {
+      console.log("Clic gauche")
+      if($(tab[0]).show() === true) {
+        $(".myslides").hide()
+        console.log("Etape 1")
+        $(tab[2]).show()
+        console.log("Etape 2")
+      // } else if($(tab[1]).show() == true) {
+      //   $(".myslides").hide()
+      //   $(tab[0]).show()
+      // } else if($(tab[2]).show() == true) {
+      //   $(".myslides").hide()
+      //   $(tab[1]).show()
+      // } else {
+      //   console.log("Il y a un truc qui déconne.")
+      }      
+    })
+
+    $("#n").click(function() {
+      console.log("Clic droit")
+      if($(tab[0]).show() == true) {
+        $(tab[0]).hide()
+        $(tab[1]).show()
+        $(tab[2]).hide()
+      } else if($(tab[1]).show() == true) {
+        $(tab[0]).hide()
+        $(tab[1]).hide()
+        $(tab[2]).show()
+      } else {
+        $(tab[0]).show()
+        $(tab[1]).hide()
+        $(tab[2]).hide()
+      }
+    })
+
+    // $(tab[0]).hide()
+    // $(tab[2]).show();
+    // })
+
+        // $("#p").click(function() {
+        //   console.log("Clic gauche")
+        //   $(".mySlides:nth-child(1)").hide()
+        //   $(".mySlides:nth-child(3)").show();
+        // })
+
+    // $("#p").click(function() {
+    //   console.log("Clic gauche")
+    //   $(".mySlides:nth-child(1)").hide()
+    //   $(".mySlides:nth-child(3)").show();
+    // })
+
+        // let img4 = $(".mySlides:nth-child(2)")
+        // console.log(img4)
+
+        // $(img4).show()
+
+    // $("#prems").hide();
+
+    // let tab0 = tab[0]
+    // console.log(tab0)
+
+    // $('tab0').hide()
+
+    // console.log(tab)
+
+    // $("mySlides:first").hide()
+
+    // document.getElementsByClassName("mySlides:first").hide()
+
+    // document.getElementsByName("tab[0]")
+    // console.log(tab[0])
+
+    // let tab0 = document.getElementsByName("mySlides[0]");
+    // console.log(tab)
+
+    // tab[0].innerHTML.hide()
+
+    // $(".mySlides tab").hide()
+    // $(".mySlides:tab[0]").hide
+
+    // $document.getElementsByClassName("mySlides")[0].hide()
+
+
+  })
+
+</script>
+
+</body>
+
+</html>

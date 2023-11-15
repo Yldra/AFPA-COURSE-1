@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+    <p class="uneclasse" id="1">animal1</p>
+    <p class="uneclasse" id="2">animal2</p>
+    <p class="uneclasse" id="3">animal3</p>
+</div>
+<button>ajoute</button>
+
+
+<script>
+        
+
+        // // Quand je clique sur un des éléments de la classe "uneclasse",
+        // // je veux afficher le texte de cet élément :
+        // $(".uneclasse").click(function() {
+        //     console.log( $(this).text() );
+        // })
+
+        // $("button").click(function(){
+        //     $("div").append(' <p class="uneclasse" id="4">animal4</p>')
+        // })
+            // SI ON ARRETE LE PROGRAMME ICI,
+            // on va rajouter "uneclasse" avec l'id="4" et le texte "animal4"
+            // quand on cliquera sur le bouton.
+            // Mais il ne se passera rien quand on cliquera sur "animal4",
+            // car le DOM ne voit pas qu'il a été ajouté.
+
+
+    
+    
+    // ETAPE 1 :
+    // Quand je clique sur un des éléments de la classe "uneclasse",
+    // je veux afficher le texte de cet élément :
+    // $(".uneclasse").click(function() {
+    //     console.log( $(this).text() );
+    // })
+
+    // ETAPE 2 (amélioration 1) :
+    // $(document).on('click', ".uneclasse", function(){
+    //     console.log( $(this).text() );
+    // })
+    // Va écouter sur tout le document, mais uniquement ce qui concerne "uneclasse".
+
+    // ETAPE 3 (amélioration 2) :
+    // C'est bien, mais ça coûte assez cher : mieux si on le limite à une div par exemple
+    // (ou un id, ou autre), comme ci-dessous :
+    $("div").on('click', ".uneclasse", function(){
+        console.log( $(this).text() );
+    })
+
+
+    $("button").click(function(){
+        $("div").append(' <p class="uneclasse" id="4">animal4</p>')
+    })
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+// exo03.scss
+// tester avec import si probleme.
+@use 'base';
+
+
+.inverse {
+  background-color: base.$primary-color;
+  color: white;
+}

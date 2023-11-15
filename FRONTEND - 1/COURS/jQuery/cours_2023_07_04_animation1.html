@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="clickme">
+        Click here
+    </div>
+    <img id="book" src="rondbleu.png" alt="" style="position: relative; left: 10px;">
+
+
+    <script>
+        $("#clickme").click(function(){
+            $("#book").animate({                
+                left: "+=300",
+                top: "200",
+                height: "+=100",
+                opacity: "0.5" 
+            }, 5000, function() {alert("Fini !")})
+        })    
+
+        // Ne pas oublier de mettre les virgules entre les différents paramètres (c'est un OBJET).
+
+
+    </script>
+
+
+
+</body>
+</html>

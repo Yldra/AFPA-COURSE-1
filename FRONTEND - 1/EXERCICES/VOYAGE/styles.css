@@ -1,0 +1,81 @@
+/* GENERAL */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body 
+{
+    font-family: Arial,sans-serif;
+    font-size: 15px;
+}
+h1,h2,h3,h4
+{
+  color: #444;
+}
+h1
+{
+    font-family: 'Crete Round', serif;
+    font-size: 45px;
+}
+h2
+{
+    font-size: 55px;
+}
+h3
+{
+    font-size: 30px;
+}
+h4
+{
+    font-size: 24px;
+}
+p
+{
+    line-height: 20px;
+    color: #777;
+}
+
+ul
+{
+    list-style: none;  /* enlève les points des listes */
+}
+
+a
+{
+    text-decoration: none;  /* enleve le bleu soulign" sur les elements anchor */
+    color: #444;
+}
+
+.wrapper
+{
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.orange {
+    color: #ff7a00;
+}
+
+#main-image {
+    background-image: url(images/main1.jpg);
+}
+
+header nav {
+    float: right;
+    margin-top: 50px;
+    position:absolute;
+    left:70%;
+}
+
+header h1 {
+    float: left;
+    margin-top: 32px;
+}
+
+header nav ul li {
+    float:left;
+    /* display: inline-block; */
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FORMULAIRE CONTINENT{% endblock %}
+
+{% block body %}
+
+<div class="container text-center mt-5" style="width: 25%;">
+
+    {{ form_start(cform) }}
+
+    <div class="form-group">
+        {{ form_row(cform.nom, {
+            'attr': {'class': 'form-control form-control-sm'},
+            'label': 'Nom: '
+        }) }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    {{ form_end(cform) }}
+    
+</div>
+
+{% endblock %}

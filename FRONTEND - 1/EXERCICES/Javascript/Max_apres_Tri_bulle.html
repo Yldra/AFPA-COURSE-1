@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function tri_bulle_max(T) {
+        var ef = true
+        while (ef == true) {
+            ef = false ;
+            for (var j = 0 ; j < T.length ; j++) {
+                if (T[j] > T[j + 1]) {
+                var temp = T[j]
+                
+                T[j] = T[j + 1]
+                T[j + 1] = temp
+                ef = true
+                }
+            }
+            }
+            console.log(T[T.length-1]); 
+        }
+
+var arr = [24, 5, 33, 76, 33]
+tri_bulle_max(arr);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

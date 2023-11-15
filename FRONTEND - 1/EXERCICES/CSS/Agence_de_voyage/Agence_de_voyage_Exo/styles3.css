@@ -1,0 +1,101 @@
+.wrapper {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    position: absolute;
+    top: 40px;
+    right: 100px;
+}
+
+h1 {
+    height: 20px;
+    width: 60%;
+    padding: 20px;
+    font-family: 'Crete Round';
+    font-size:2em;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+strong {
+    font-weight: 900;
+}
+
+#main-image {
+    background-image: url('images_2/images/main1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 45px;
+}
+
+a.button-1 {
+    background-color: #FD7A23;
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+    display: inline-block;
+    width: 65px;
+    height: 30px;
+    margin-left: 47%;
+    border-radius: 8px;
+}
+
+
+.orange {
+    color: #FD7A23;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#liste {
+    display: inline-block;
+}
+
+#liste li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.7em;
+}
+
+#toto {
+    display: none;
+}
+
+
+
+
+
+header h1 {
+    float: left;
+    margin-top: 32px;
+}
+
+header nav {
+    
+    /*float: right; (possible de mettre cette commande à la place de celle ci-dessous) */
+    margin: 50px;
+    position:absolute;
+    left:70%
+}
+
+header nav ul li
+{
+    float:left;
+    /* display: inline-block; (possible de mettre cette commande à la place de celle ci-dessus pour avoir un résultat équivalent) */
+}

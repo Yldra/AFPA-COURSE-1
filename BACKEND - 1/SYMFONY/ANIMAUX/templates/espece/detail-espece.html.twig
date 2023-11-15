@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DETAIL ESPÈCE{% endblock %}
+
+{% block body %}
+<style>
+h2,h3,h4 {
+    text-decoration: underline;
+}
+p { 
+    font-size: 30px;
+}
+</style>
+
+<div class="container text-center mt-5" style="width: 25%;">
+    
+    <h1>Liste des Animaux correspondant à {{ espece.nom }}</h1>
+    {% for animal in espece.animaux %}
+    <hr>
+    <h1>Nom : {{ animal.nom }}</h1>
+    <img class="img-thumbnail rounded-square" src="{{ asset('pictures/' ~ animal.image) }}" alt="{{ animal.nom }}" height="300px" width="400px">
+    <h3>Description :</h3>
+    <p>{{ animal.description }}
+    <h3>Nom Latin :</h3>
+    <p>{{ animal.nomLatin }}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

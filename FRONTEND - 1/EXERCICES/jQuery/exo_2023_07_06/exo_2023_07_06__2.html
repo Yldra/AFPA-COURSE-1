@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="js"></div>
+
+    <div id="jq"></div>
+
+    <p>Premier paragraphe</p>
+    <p>Deuxième paragraphe</p>
+    <p>Troisième paragraphe</p>
+
+
+    <script>
+        // Ajouter un texte "Un super texte" en JS dans le div#js
+        // puis en jQuery dans div#jq
+
+        const t = "Un super texte"
+
+        // En JS :
+            // Essai :
+            // let parag = document.createElement("p")
+            // let text = document.createTextNode(t)
+            // document.getElementById('js').append(parag)
+            // parag.append(text)
+            // ou :
+            // document.getElementById('js').innerHTML = t
+
+        document.querySelector('#js').innerHTML = t
+
+
+        // En JQ :
+        $('#jq').text(t)
+
+
+
+                // Mes réflexions / essais :
+                console.log("Utilisation de querySelector :")
+                console.log(document.querySelector('p'))
+
+                console.log("Utilisation de getElementsByTagName :")
+                let pTab = document.getElementsByTagName('p')
+                console.log(pTab[0])
+
+                console.log("Utilisation de getElementsById (sur la div avec l'id js) : ")
+                // console.log("2." + document.getElementsByTagName('p').innerText())
+                console.log(document.getElementById('js').innerText)
+
+
+
+    </script>
+
+
+</body>
+</html>

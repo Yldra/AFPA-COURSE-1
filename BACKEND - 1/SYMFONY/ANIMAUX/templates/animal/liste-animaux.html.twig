@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LISTE ANIMAUX{% endblock %}
+
+{% block body %}
+<style>
+    p { font-size : 20px}
+
+    .custom-success-message {
+    /* Add your custom CSS styles here */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+</style>
+
+<div class="container text-center mt-5">
+{# {{ dump(animal) }} #}
+    <h1>LISTE DES ANIMAUX</h1>
+    <br>
+    <a href="{{ path('crea_animal') }}">
+    <button type="submit" class="btn btn-primary btn-sm">Créer</button></a>
+    <br>
+        {% for animal in animaux %}
+            <h2>Nom: {{ animal.nom }}</h2>
+            <a href="{{ path('app_animal', {'id': animal.id}) }}">
+            <img class="img-thumbnail rounded-square" src="{{ asset('pictures/' ~ animal.image) }}" 
+            alt="{{ animal.nom }}" height="300px" width="400px">
+            </a>
+            <h3>Description :</h3>
+            <p>{{ animal.description }}
+            <h3>Nom Latin :</h3>
+            <p>{{ animal.nomLatin }}</p>
+            <h3>Espèce :</h3>
+            <p>{{ animal.espece.nom }}</p>
+            <h3>Origine :</h3>
+                {% for continent in animal.continents %}
+                    <p>{{ continent.nom }}</p>
+                {% endfor %}
+                
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success custom-success-message">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+            <hr>
+        {% endfor %}
+
+
+</div>
+{% endblock %}
+
+
+

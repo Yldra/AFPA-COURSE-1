@@ -1,0 +1,22 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    border: 1px solid red;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    /* align-content: space-around; */
+}
+
+.rubrique {
+    border: 1px solide black;
+    flex-grow: 1;
+    flex-basis: 50%;
+    /* align-content: space-around; */
+}

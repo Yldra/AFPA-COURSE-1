@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+<div id="toto"></div>
+<script>
+
+var test=document.createElement('section');
+test.setAttribute('id','test');
+
+var ul=document.createElement('ul');
+document.body.appendChild(test);
+test.appendChild(ul);
+
+var li=document.createElement('li');
+ul.appendChild(li);
+li.innerHTML="item1"
+var li=document.createElement('li');
+ul.appendChild(li);
+li.innerHTML="item2"
+
+</script>
+</body>
+</html>

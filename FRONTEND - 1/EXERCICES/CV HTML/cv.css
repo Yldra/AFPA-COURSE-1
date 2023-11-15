@@ -1,0 +1,377 @@
+
+/* -----------------------------------------------------HAMBURGER MENU------------------------------------------------------------------------- */
+
+nav {
+    margin: 100px auto;
+    width: 60%;
+    height: 100px;
+}
+
+nav .main_pages {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+label, #toggle
+{
+    display: none;
+}
+ 
+@media all and (max-width: 991px)
+{
+    nav
+    {
+        height: 60px;
+    }
+ 
+    nav .main_pages 
+    {
+        display: none;
+        flex-direction: column;
+        height: 220px;
+    }
+ 
+    nav .main_pages a {
+        width: 50%;
+    }
+ 
+    label 
+    {
+        height: 50px;
+        width: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 45px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+    }
+    
+    #toggle:checked + .main_pages {
+      display: flex;
+  }
+}
+
+
+/* ---------------------------------------------------SOULIGNEMENT MENU------------------------------------------------------------------------ */
+
+:root {
+  --red: hsl(0, 91%, 43%);
+  --light: hsl(16, 99%, 99%);
+  --dark: hsl(16, 99%, 1%);
+ 
+  --font-family: "Montserrat", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-semi-bold: 600;
+ 
+  --animation-timing: 0.6s;
+}
+ 
+ 
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-light);
+}
+ 
+a {
+  color: var(--dark);
+  text-decoration: none;
+}
+ 
+.bloc {
+  width: 80%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+ 
+nav .bloc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+}
+ 
+.red {
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-semi-bold);
+}
+ 
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+ 
+.menu .item {
+  margin-left: 1rem;
+}
+ 
+.menu .link {
+  font-size: 1.2rem;
+}
+
+.menu .link::after {
+  content: "";
+ 
+  display: block;
+  height: 0.1rem;
+  background: var(--red);
+}
+
+.menu .link::after {
+  content: "";
+ 
+  display: block;
+  height: 0.1rem;
+  background: var(--red);
+ 
+  transform: scale(0);
+}
+
+.menu .link:hover::after {
+  transform: scale(1);
+}
+
+.menu .link::after {
+  content: "";
+ 
+  display: block;
+  height: 0.1rem;
+  background: var(--red);
+ 
+  transform: scale(0);
+  transition: transform var(--animation-timing);
+}
+
+.menu .link:hover::after {
+  transform: scale(1);
+  transform-origin: left;
+}
+
+.menu .link::after {
+  content: "";
+  display: block;
+  height: 0.1rem;
+  background: var(--red);
+ 
+  transform: scale(0);
+  transition: transform var(--animation-timing);
+ 
+  transform-origin: right;
+}
+
+.menu .link::after {
+  content: "";
+ 
+  display: block;
+  height: 0.1rem;
+  background: var(--red);
+ 
+  transform: scale(0);
+  transition: transform var(--animation-timing);
+ 
+  transform-origin: right;
+ 
+  animation: fade-in var(--animation-timing);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+ 
+  90% {
+    opacity: 0.6;
+  }
+ 
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu .link:hover {
+  color: hsl(0, 91%, 43%);
+}
+
+
+
+/* ------------------------------------------------------------GLOBAL------------------------------------------------------------------------- */
+
+*
+{
+  margin: 0;
+  padding: 0;
+  font-family: 'Crete Round', serif;
+}
+
+.bloc
+{
+  background-color: #777;
+  width: 940px;
+  margin: 0 auto;    
+  padding: 0 10px;
+}
+
+#propos div {
+  font-size: 15px;
+  float: left;
+  border: rgb(0, 0, 0) solid 3px;
+  padding:10px;
+}
+
+.red {
+  color: rgb(200, 27, 7);
+}
+
+body 
+{
+  font-family: Arial,sans-serif;
+  font-size: 15px;
+}
+h1,h2,h3,h4
+{
+color: #000000;
+border-color: aqua;
+}
+h1
+{   
+  text-shadow: 2px 0 0 rgb(26, 26, 26), 2px 2px 0 rgb(102, 98, 94), 
+  0 2px 0 rgb(83, 80, 77), -2px 2px 0 rgb(122, 114, 107), -2px 0 0 rgb(116, 107, 99),
+   -2px -2px 0 rgb(120, 112, 105), 0 -2px 0 rgb(118, 111, 105), 2px -2px 0 rgb(123, 111, 101);
+  font-family: 'Crete Round', serif;
+  font-size: 55px;
+}
+h2
+{
+  font-size: 55px;
+}
+h3
+{
+  font-size: 30px;
+}
+h4
+{
+  font-size: 24px;
+}
+p
+{
+  line-height: 20px;
+  color: #777;
+}
+
+
+/* ------------------------------------------------------------HEADER------------------------------------------------------------------------- */
+
+
+ul
+{
+  list-style: none;  /* enlève les points des listes */
+}
+a
+{  
+  /*text-decoration: none;   enleve le bleu soulign" sur les elements anchor */
+  color: #000000;
+  font-size: 20px;
+}
+header 
+{
+  background-color: #777777a2;
+  height: 120px;   
+}
+header h1
+{
+  float: left;
+  margin-top: 40px;
+  padding-left: 40px;
+}
+
+header nav
+{
+  /*float: right;*/
+  margin-top: 50px;
+  position:absolute;
+  left: 35%;
+}
+
+header nav ul li
+{
+  float:left;
+  /* display: inline-block; */
+}
+
+header nav ul li a
+{
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+
+/* ------------------------------------------------------------FOOTER------------------------------------------------------------------------- */
+
+
+#copyright {
+  color: black;
+}
+
+.brian {
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.878);
+}
+
+#footer {
+  display: block;
+  text-align: center;
+  padding: 100px;
+  margin: 100px;
+}
+
+
+.fa-brands {
+  font-size: 1em;
+  margin-left:30px;
+}
+
+.fa-twitter:hover {
+  color: #00acee;
+}
+
+.fa-instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.fa-twitch:hover {
+  color:#6441A4;
+}
+
+.fa-youtube:hover {
+  color: #FF0000;
+}
+
+.fa-linkedin:hover {
+  color: #0A66C2;
+}
+
+.fa-facebook:hover {
+  color: #3b5998;
+}
+
+.fa-discord:hover {
+  color:#7289DA;
+}
+
+.propos {
+  display: block;
+  width: 500px;
+  height: 300px;
+  margin-left: 50px;
+}
+
+.propos h2 {
+  text-align: right;
+}

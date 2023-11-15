@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p id="afficheNom"></p>
+    <input id="nom">
+    <button id="btn">Go</button>
+</body>
+<script>
+    $(document).ready(function(){
+    // Mettre la ligne ci-dessus chaque fois qu'un utilise jQuery,
+    // pour que tout le jQuery soit lancé en même temps quand la page DOM
+    // est prête pour que le code JS s'exécute.
+    // Le code dans $( window ).on( "load", function() { ... }) se lancera
+    // quand toute la page (y compris les images), et pas seulement le DOM, sera prête.
+
+        $("#btn").click(function(){
+            let nom = $("#nom").val();
+            $('#afficheNom').append(nom);
+        })
+    })
+
+</script>
+</html>
