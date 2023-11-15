@@ -45,5 +45,3 @@ N'hésitez pas à me contacter pour toute question ou clarification. Bon apprent
 ---
 
 **Note** : Assurez-vous d'utiliser les dernières versions des technologies mentionnées pour une expérience optimale.
-# AFPA-COURSE-1
-# AFPA-COURSE-1
